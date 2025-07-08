@@ -9,6 +9,9 @@ LOCAL_FUNCTIONS_FILE4="/data/local/tmp/function-deleted.sh"
 curl -sL "$GITHUB_FUNCTIONS_URL3" -o "$LOCAL_FUNCTIONS_FILE3"
 curl -sL "$GITHUB_FUNCTIONS_URL4" -o "$LOCAL_FUNCTIONS_FILE4"
 
+chmod +x /data/local/tmp/design.sh
+chmod +x /data/local/tmp/function-deleted.sh
+
 # Memulai Menghapus Module NoxXB - PRO
 sleep 0.2 && echo_design1
 sleep 0.2 && echo_design
