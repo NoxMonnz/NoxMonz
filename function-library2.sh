@@ -1,6 +1,6 @@
 # --- Definisikan fungsi system_read_function ---
 system_read_function() {
-    GAME="$1" # Variabel ini tetap diperlukan untuk cmd game downscale
+    GAME="$1" # Variabel ini tetap diperlukan untuk cmd game downscales
     CONFIG_FILE="/storage/emulated/0/NoxXBPRO/settings/settings.ini" 
 
     # Periksa apakah argumen GAME (nama paket) ada
