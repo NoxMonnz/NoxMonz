@@ -5,9 +5,9 @@ githubFiles="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/function-li
 githubFiles2="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/function-library.sh"
 
 # Memanggil direktori function.sh dan design.sh
-curl -sL "$githubFiles" | bash
+curl -sL "$githubFiles"
 pwd
-curl -sL "$githubFiles" | bash
+curl -sL "$githubFiles"
 pwd
 
 # Memulai Module NoxXB - PRO
