@@ -4,6 +4,7 @@ githubFiles3="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/function-d
 
 # Memanggil direktori function.sh dan design.sh
 curl -sL "$githubFiles3" | bash
+pwd
 
 # Memulai Menghapus Module NoxXB - PRO
 sleep 0.2 && echo_design1
