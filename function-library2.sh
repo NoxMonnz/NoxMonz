@@ -1,5 +1,3 @@
-#!/system/bin/sh
-
 disable_battery() {
 {
 settings put global battery_saver_adaptive_constants advertise_is_enabled=false,enable_datasaver=false,enable_night_mode=true,disable_launch_boost=false,disable_vibration=true,disable_animation=true,disable_soundtrigger=true,defer_full_backup=true,defer_keyvalue_backup=true,enable_firewall=false,location_mode=2,gps_mode=2,enable_brightness_adjustment=false,adjust_brightness_factor=0.5,force_all_apps_standby=true,force_background_check=true,disable_optional_sensors=true,disable_aod=false,enable_quick_doze true
