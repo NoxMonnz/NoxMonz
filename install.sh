@@ -6,7 +6,9 @@ githubFiles2="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/function-l
 
 # Memanggil direktori function.sh dan design.sh
 curl -sL "$githubFiles" | bash
+pwd
 curl -sL "$githubFiles" | bash
+pwd
 
 # Memulai Module NoxXB - PRO
 sleep 0.2 && Detected_Game
