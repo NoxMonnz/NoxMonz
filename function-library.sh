@@ -1,110 +1,110 @@
 system_read_function() {
-    GAME="$1" # This variable is still needed for cmd game downscales
-    CONFIG_FILE="/storage/emulated/0/NoxXBPRO/settings/settings.ini" 
+GAME="$1" # This variable is still needed for cmd game downscales
+CONFIG_FILE="/storage/emulated/0/NoxXBPRO/settings/settings.ini" 
 
-    # Check if the GAME (package name) argument is present
-    if [ -z "$GAME" ]; then
-        echo "ERROR: Game package name (first argument) is empty. Cannot continue system setup."
-        return 1
-        exit 1
-    fi
+# Check if the GAME (package name) argument is present
+if [ -z "$GAME" ]; then
+    echo "ERROR: Game package name (first argument) is empty. Cannot continue system setup."
+    return 1
+    exit 1
+fi
 
-    # Check for the existence of the configuration file
-    if [ ! -f "$CONFIG_FILE" ]; then
-        echo "ERROR: Configuration file NOT FOUND in $CONFIG_FILE."
-        echo "Make sure 'settings.ini' is in the correct location."
-        return 1
-    fi
+# Check for the existence of the configuration file
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "ERROR: Configuration file NOT FOUND in $CONFIG_FILE."
+    echo "Make sure 'settings.ini' is in the correct location."
+    return 1
+fi
 
-    ENGINE_VALUE=$(sed -n 's/Engine="\([^"]*\)"/\1/p' "$CONFIG_FILE")
-    BECKEND_VALUE=$(sed -n 's/Beckend="\([^"]*\)"/\1/p' "$CONFIG_FILE")
-    SCALE_VALUE=$(sed -n 's/Scale="\([^"]*\)"/\1/p' "$CONFIG_FILE")
-    FPS_VALUE=$(sed -n 's/Fps="\([^"]*\)"/\1/p' "$CONFIG_FILE")
-    DWNS_VALUE=$(sed -n 's/Downscale="\([^"]*\)"/\1/p' "$CONFIG_FILE")
+ENGINE_VALUE=$(sed -n 's/Engine="\([^"]*\)"/\1/p' "$CONFIG_FILE")
+BECKEND_VALUE=$(sed -n 's/Beckend="\([^"]*\)"/\1/p' "$CONFIG_FILE")
+SCALE_VALUE=$(sed -n 's/Scale="\([^"]*\)"/\1/p' "$CONFIG_FILE")
+FPS_VALUE=$(sed -n 's/Fps="\([^"]*\)"/\1/p' "$CONFIG_FILE")
+DWNS_VALUE=$(sed -n 's/Downscale="\([^"]*\)"/\1/p' "$CONFIG_FILE")
     
-    # Menerapkan pengatarun SCALE
-    # settings put membutuhkan izin shell atau root.
+# Menerapkan pengatarun SCALE
+# settings put membutuhkan izin shell atau root.
+{
+settings put global window_animation_scale "$SCALE_VALUE"
+settings put global transition_animation_scale "$SCALE_VALUE"
+settings put global animator_duration_scale "$SCALE_VALUE"
+} > /dev/null 2>&1
+    
+# Menerapkan pengaturan FPS
+# settings put membutuhkan izin shell atau root.
+{
+settings put system peak_refresh_rate "$FPS_VALUE"
+settings put system min_refresh_rate "$FPS_VALUE"
+settings put system max_refresh_rate "$FPS_VALUE"
+settings put system user_refresh_rate "$FPS_VALUE"
+} > /dev/null 2>&1
+    
+# Menerapkan Downscale
+# cmd game downscale membutuhkan izin shell atau root.
+# Output dari perintah ini diarahkan ke /dev/null untuk menghindari clutter
+{
+cmd game downscale "$DWNS_VALUE" "$GAME"
+} > /dev/null 2>&1
+
+checked=$(pm list features | grep vulkan | echo "true" || echo "false")
+
+if [ "$checked" = "true" ]; then
+    # Menerapkan pengaturan Engine dan Backend
+    # setprop membutuhkan izin shell atau root. Pastikan Brevent memiliki ini.
     {
-    settings put global window_animation_scale "$SCALE_VALUE"
-    settings put global transition_animation_scale "$SCALE_VALUE"
-    settings put global animator_duration_scale "$SCALE_VALUE"
+    setprop debug.hwui.renderer "$ENGINE_VALUE"
+    setprop debug.renderengine.beckend  "$BECKEND_VALUE"
     } > /dev/null 2>&1
+  echo " Engine: $ENGINE_VALUE"
+  sleep 1
+  echo " Beckend: $BECKEND_VALUE "
+  else
+  echo " Your Phone Not Supported Vulkan API!"
+  sleep 0.5
+  echo " Auto Set To OpenGL "
+  {
+  setprop debug.hwui.renderer opengl
+  setprop debug.renderengine.beckend opengl
+  } > /dev/null 2>&1
+fi 
     
-    # Menerapkan pengaturan FPS
-    # settings put membutuhkan izin shell atau root.
-    {
-    settings put system peak_refresh_rate "$FPS_VALUE"
-    settings put system min_refresh_rate "$FPS_VALUE"
-    settings put system max_refresh_rate "$FPS_VALUE"
-    settings put system user_refresh_rate "$FPS_VALUE"
-    } > /dev/null 2>&1
+sleep 1
     
-    # Menerapkan Downscale
-    # cmd game downscale membutuhkan izin shell atau root.
-    # Output dari perintah ini diarahkan ke /dev/null untuk menghindari clutter
-    {
-    cmd game downscale "$DWNS_VALUE" "$GAME"
-    } > /dev/null 2>&1
-
-    checked=$(pm list features | grep vulkan | echo "true" || echo "false")
-
-    if [ "$checked" = "true" ]; then
-       # Menerapkan pengaturan Engine dan Backend
-       # setprop membutuhkan izin shell atau root. Pastikan Brevent memiliki ini.
-       {
-       setprop debug.hwui.renderer "$ENGINE_VALUE"
-       setprop debug.renderengine.beckend "$BECKEND_VALUE"
-       } > /dev/null 2>&1
-       echo " Engine: $ENGINE_VALUE"
-       sleep 1
-       echo " Beckend: $BECKEND_VALUE "
-    else
-       echo " Your Phone Not Supported Vulkan API!"
-       sleep 0.5
-       echo " Auto Set To OpenGL "
-       {
-       setprop debug.hwui.renderer opengl
-       setprop debug.renderengine.beckend opengl
-       } > /dev/null 2>&1
-    fi 
-    
-    sleep 1
-    
-    # Scale Detect
-    # Perbaikan: Menggunakan "$SCALE_VALUE"
-    if [ -n "$SCALE_VALUE" ]; then
-        echo " Animation Scale: $SCALE_VALUE"
-    else
-        echo " Animation Scale: Not Detected/Applied"
-    fi
+# Scale Detect
+# Perbaikan: Menggunakan "$SCALE_VALUE"
+if [ -n "$SCALE_VALUE" ]; then
+    echo " Animation Scale: $SCALE_VALUE"
+else
+    echo " Animation Scale: Not Detected/Applied"
+fi
   
-    sleep 1
+sleep 1
     
-    # Fps Detect
-    # Perbaikan: Menggunakan "$FPS_VALUE"
-    if [ -n "$FPS_VALUE" ]; then
-        echo " Frame Per Seconds: $FPS_VALUE"
-    else
-        echo " Frame Per Seconds: Not Detected/Applied"
-    fi
+# Fps Detect
+# Perbaikan: Menggunakan "$FPS_VALUE"
+if [ -n "$FPS_VALUE" ]; then
+    echo " Frame Per Seconds: $FPS_VALUE"
+else
+    echo " Frame Per Seconds: Not Detected/Applied"
+fi
   
-    sleep 1
+sleep 1
     
-    # Downscale Detect
-    # Perbaikan: Menggunakan "$DWNS_VALUE" dan pesan yang benar
-    if [ -n "$DWNS_VALUE" ]; then
-        echo " Downscale: $DWNS_VALUE ( $GAME )"
-    else
-        echo " Downscale: Not Detected/Applied"
-    fi
+# Downscale Detect
+# Perbaikan: Menggunakan "$DWNS_VALUE" dan pesan yang benar
+if [ -n "$DWNS_VALUE" ]; then
+    echo " Downscale: $DWNS_VALUE ( $GAME )"
+else
+    echo " Downscale: Not Detected/Applied"
+fi
  
-    sleep 1
+sleep 1
     
-    echo " Success" 
-    echo ""
-    sleep 2 # Mengurangi sleep
+echo " Success" 
+echo ""
+sleep 2 # Mengurangi sleep
     
-    return 0 # Mengembalikan 0 untuk menandakan sukses
+return 0 # Mengembalikan 0 untuk menandakan sukses
 }
 
 
