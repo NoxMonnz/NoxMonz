@@ -91,6 +91,7 @@ output=$(cmd game 2>&1)
 # Periksa apakah output menunjukkan dukungan Game Manager
 if echo "$output" | grep -q "Game manager (game) commands:"; then 
     cmd game downscale $DWNS_VALUE $GAME > /dev/null 2>&1
+    Downscale: $DWNS_VALUE ( $GAME )
 elif echo "$output" | grep -q "cmd: Can't find service: game"; then
     echo "Your Phone Does Not Support Game Manager"
 else
