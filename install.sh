@@ -12,6 +12,10 @@ curl -sL "$GITHUB_FUNCTIONS_URL3" -o "$LOCAL_FUNCTIONS_FILE3"
 curl -sL "$GITHUB_FUNCTIONS_URL" -o "$LOCAL_FUNCTIONS_FILE"
 curl -sL "$GITHUB_FUNCTIONS_URL2" -o "$LOCAL_FUNCTIONS_FILE2"
 
+chmod +x /data/local/tmp/design.sh
+chmod +x /data/local/tmp/function-library.sh
+chmod +x /data/local/tmp/function-library2.sh
+
 # Memulai fungsi file
 source "/data/local/tmp/function-library.sh"
 source "/data/local/tmp/function-library2.sh"
