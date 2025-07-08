@@ -1,5 +1,6 @@
 #!/system/bin/sh
 
+# Argument link GitHub
 GITHUB_FUNCTIONS_URL3="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/design.sh"
 LOCAL_FUNCTIONS_FILE3="/data/local/tmp/design.sh"
 GITHUB_FUNCTIONS_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/function-library.sh"
@@ -12,6 +13,7 @@ curl -sL "$GITHUB_FUNCTIONS_URL3" -o "$LOCAL_FUNCTIONS_FILE3"
 curl -sL "$GITHUB_FUNCTIONS_URL" -o "$LOCAL_FUNCTIONS_FILE"
 curl -sL "$GITHUB_FUNCTIONS_URL2" -o "$LOCAL_FUNCTIONS_FILE2"
 
+# Verifikasi direktori dan file
 chmod +x /data/local/tmp/design.sh
 chmod +x /data/local/tmp/function-library.sh
 chmod +x /data/local/tmp/function-library2.sh
