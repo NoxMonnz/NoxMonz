@@ -49,12 +49,12 @@ cmd game downscale "$DWNS_VALUE" "$GAME"
 checked=$(pm list features | grep vulkan | echo "true" || echo "false")
 
 if [ "$checked" = "true" ]; then
-    # Menerapkan pengaturan Engine dan Backend
-    # setprop membutuhkan izin shell atau root. Pastikan Brevent memiliki ini.
-    {
-    setprop debug.hwui.renderer "$ENGINE_VALUE"
-    setprop debug.renderengine.beckend  "$BECKEND_VALUE"
-    } > /dev/null 2>&1
+# Menerapkan pengaturan Engine dan Backend
+# setprop membutuhkan izin shell atau root. Pastikan Brevent memiliki ini.
+  {
+  setprop debug.hwui.renderer "$ENGINE_VALUE"
+  setprop debug.renderengine.beckend  "$BECKEND_VALUE"
+  } > /dev/null 2>&1
   echo " Engine: $ENGINE_VALUE"
   sleep 1
   echo " Beckend: $BECKEND_VALUE "
