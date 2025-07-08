@@ -38,13 +38,6 @@ settings put system min_refresh_rate "$FPS_VALUE"
 settings put system max_refresh_rate "$FPS_VALUE"
 settings put system user_refresh_rate "$FPS_VALUE"
 } > /dev/null 2>&1
-    
-# Menerapkan Downscale
-# cmd game downscale membutuhkan izin shell atau root.
-# Output dari perintah ini diarahkan ke /dev/null untuk menghindari clutter
-{
-cmd game downscale "$DWNS_VALUE" "$GAME"
-} > /dev/null 2>&1
 
 checked=$(pm list features | grep vulkan | echo "true" || echo "false")
 
@@ -92,11 +85,19 @@ sleep 1
     
 # Downscale Detect
 # Perbaikan: Menggunakan "$DWNS_VALUE" dan pesan yang benar
-if [ -n "$DWNS_VALUE" ]; then
-    echo " Downscale: $DWNS_VALUE ( $GAME )"
+
+output=$(cmd game 2>&1)
+
+# Periksa apakah output menunjukkan dukungan Game Manager
+if echo "$output" | grep -q "Game manager (game) commands:"; then
+    echo "Your Phone Supports Game Manager"    
+    cmd game downscale $DWNS_VALUE $GAME > /dev/null 2>&1
+elif echo "$output" | grep -q "cmd: Can't find service: game"; then
+    echo "Your Phone Does Not Support Game Manager"
 else
-    echo " Downscale: Not Detected/Applied"
+    echo "Could not determine Game Manager support. Unexpected output from 'cmd game'."
 fi
+
  
 sleep 1
     
