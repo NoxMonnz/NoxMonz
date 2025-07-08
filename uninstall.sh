@@ -1,10 +1,13 @@
 #!/system/bin/sh
 
-githubFiles3="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/function-deleted.sh"
+GITHUB_FUNCTIONS_URL3="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/design.sh"
+LOCAL_FUNCTIONS_FILE3="/data/local/tmp/design.sh"
+GITHUB_FUNCTIONS_URL4="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/function-deleted.sh"
+LOCAL_FUNCTIONS_FILE4="/data/local/tmp/function-deleted.sh"
 
-# Memanggil direktori function.sh dan design.sh
-curl -sL "$githubFiles3" | bash
-pwd
+# Unduh file fungsi ke lokasi sementara
+curl -sL "$GITHUB_FUNCTIONS_URL3" -o "$LOCAL_FUNCTIONS_FILE3"
+curl -sL "$GITHUB_FUNCTIONS_URL4" -o "$LOCAL_FUNCTIONS_FILE4"
 
 # Memulai Menghapus Module NoxXB - PRO
 sleep 0.2 && echo_design1
