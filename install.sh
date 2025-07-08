@@ -15,7 +15,7 @@ curl -sL "$GITHUB_FUNCTIONS_URL3" -o "$LOCAL_FUNCTIONS_FILE3"
 # Memulai fungsi file
 source "/data/local/tmp/function-library.sh"
 source "/data/local/tmp/function-library2.sh"
-source "/data/local/tmp/design.sh
+source "/data/local/tmp/design.sh "
 
 # Memulai Module NoxXB - PRO dengan function
 sleep 0.2 && Detected_Game
