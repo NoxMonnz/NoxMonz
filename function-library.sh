@@ -1,18 +1,18 @@
 system_read_function() {
-    GAME="$1" # Variabel ini tetap diperlukan untuk cmd game downscales
+    GAME="$1" # This variable is still needed for cmd game downscales
     CONFIG_FILE="/storage/emulated/0/NoxXBPRO/settings/settings.ini" 
 
-    # Periksa apakah argumen GAME (nama paket) ada
+    # Check if the GAME (package name) argument is present
     if [ -z "$GAME" ]; then
-        echo "ERROR: Game package name (argumen pertama) kosong. Tidak bisa melanjutkan setup sistem."
+        echo "ERROR: Game package name (first argument) is empty. Cannot continue system setup."
         return 1
         exit 1
     fi
 
-    # Periksa keberadaan file konfigurasi
+    # Check for the existence of the configuration file
     if [ ! -f "$CONFIG_FILE" ]; then
-        echo "ERROR: File konfigurasi TIDAK DITEMUKAN di $CONFIG_FILE."
-        echo "Pastikan 'settings.ini' berada di lokasi yang benar."
+        echo "ERROR: Configuration file NOT FOUND in $CONFIG_FILE."
+        echo "Make sure 'settings.ini' is in the correct location."
         return 1
     fi
 
@@ -75,7 +75,7 @@ system_read_function() {
     if [ -n "$SCALE_VALUE" ]; then
         echo " Animation Scale: $SCALE_VALUE"
     else
-        echo " Animation Scale: Tidak Terdeteksi/Diterapkan"
+        echo " Animation Scale: Not Detected/Applied"
     fi
   
     sleep 1
@@ -85,7 +85,7 @@ system_read_function() {
     if [ -n "$FPS_VALUE" ]; then
         echo " Frame Per Seconds: $FPS_VALUE"
     else
-        echo " Frame Per Seconds: Tidak Terdeteksi/Diterapkan"
+        echo " Frame Per Seconds: Not Detected/Applied"
     fi
   
     sleep 1
@@ -95,7 +95,7 @@ system_read_function() {
     if [ -n "$DWNS_VALUE" ]; then
         echo " Downscale: $DWNS_VALUE ( $GAME )"
     else
-        echo " Downscale: Tidak Terdeteksi/Diterapkan" # Perbaikan pesan
+        echo " Downscale: Not Detected/Applied"
     fi
  
     sleep 1
@@ -507,7 +507,7 @@ echo "$FILE_CONTENT" > "$FULL_FILE_PATH"
 if [ -f "$FULL_FILE_PATH" ] && [ "$(cat "$FULL_FILE_PATH")" = "$FILE_CONTENT" ]; then
     return 0 # Keluar dengan kode sukses
 else
-    echo "ERROR: Gagal membuat atau memverifikasi file '$FULL_FILE_PATH'."
+    echo "ERROR: Failed to create or verify file '$FULL_FILE_PATH'."
     exit 1
 fi
 }
