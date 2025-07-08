@@ -1,23 +1,23 @@
 #!/system/bin/sh
 
+# Argument link GitHub
 GITHUB_FUNCTIONS_URL3="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/design.sh"
 LOCAL_FUNCTIONS_FILE3="/data/local/tmp/design.sh"
-GITHUB_FUNCTIONS_URL4="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/function-deleted.sh"
-LOCAL_FUNCTIONS_FILE4="/data/local/tmp/function-deleted.sh"
+GITHUB_FUNCTIONS_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/function-deleted.sh"
+LOCAL_FUNCTIONS_FILE="/data/local/tmp/function-deleted.sh"
 
 # Unduh file fungsi ke lokasi sementara
 curl -sL "$GITHUB_FUNCTIONS_URL3" -o "$LOCAL_FUNCTIONS_FILE3"
-curl -sL "$GITHUB_FUNCTIONS_URL4" -o "$LOCAL_FUNCTIONS_FILE4"
+curl -sL "$GITHUB_FUNCTIONS_URL" -o "$LOCAL_FUNCTIONS_FILE"
 
 # Verifikasi direktori dan file
 chmod +x /data/local/tmp/design.sh
 chmod +x /data/local/tmp/function-deleted.sh
 
-# Mencari file
-source "/data/local/tmp/design.sh"
+# Memulai fungsi file
 source "/data/local/tmp/function-deleted.sh"
+source "/data/local/tmp/design.sh"
 
-# Memulai Menghapus Module NoxXB - PRO
 sleep 0.2 && echo_design1
 sleep 0.2 && echo_design
 sleep 2
@@ -52,6 +52,4 @@ case "$Removed" in
   -All)
     sleep 0.2 && Reboot
     ;;
-esac    
- 
-  
+esac
