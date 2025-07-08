@@ -1,14 +1,13 @@
 #!/system/bin/sh
 
-# Arguments1
-githubFiles="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/function-library2.sh"
-githubFiles2="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/function-library.sh"
+GITHUB_FUNCTIONS_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/function-library.sh"
+LOCAL_FUNCTIONS_FILE="/data/local/tmp/function-library.sh"
 
-# Memanggil direktori function.sh dan design.sh
-curl -sL "$githubFiles"
-pwd
-curl -sL "$githubFiles"
-pwd
+# Unduh file fungsi ke lokasi sementara
+curl -sL "$GITHUB_FUNCTIONS_URL" -o "$LOCAL_FUNCTIONS_FILE"
+
+# Memulai fungsi file
+source "/data/local/tmp/function-library.sh"
 
 # Memulai Module NoxXB - PRO
 sleep 0.2 && Detected_Game
