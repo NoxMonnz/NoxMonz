@@ -171,6 +171,7 @@ soc=$(getprop ro.soc.manufacturer)
 
 
 network_default() {
+{
 settings delete global download_manager_recommended_max_bytes_over_mobile
 settings delete global download_manager_max_bytes_over_mobile
 settings delete global tether_offload_disabled
@@ -196,6 +197,7 @@ settings delete global wifi_scan_always_enabled
 settings delete global wifi_scan_throttle_enabled   
 settings put global private_dns_specifier ""
 settings put global private_dns_mode "off"
+} > /dev/null 2>&1
 }
 
 
