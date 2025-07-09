@@ -24,6 +24,7 @@ source "/data/local/tmp/function-library2.sh"
 source "/data/local/tmp/design.sh"
 
 # Memulai Module NoxXB - PRO dengan function
+sleep 0.2 && Delete_log
 sleep 0.2 && Detected_Game
 sleep 0.2 && moddifier "$1"
 sleep 0.2 && Checking_file
