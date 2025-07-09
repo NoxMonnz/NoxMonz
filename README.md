@@ -1,19 +1,9 @@
 # NoxXB - PRO
-Membantu memperlancarkan system device
-dengan menggunakan module pihak ketiga 
-yang sudah dirancang untuk memperlancar 
-device anda
+Helps smooth the device system by using third-party modules that have been designed to smooth your device.
 
 # NoxXB - PRO
-Juga membantu untuk memperkuat koneksi internet
-dengan code² yang dirancang untuk bisa memperkuat
-koneksi internet kalian
+It also helps to strengthen your internet connection with codes designed to strengthen your internet connection.
 
-# Mengapa Harus Dijalankan di Brevent?
-Karena module ini bersifat debug atau ( Debugging )
-jadi harus dijalankan di brevent
+# Why should it be run in Brevent? Because this module is debug or (Debugging) so it must be run in Brevent
 
-# Apa Versi Evolution NoxXB Ini?
-Versi evolution ini dirancang lebih efisien dan
-lebih kuat serta sudah dilengkapi dengan protection
-untuk mendeteksi apakah device anda support tweak ini
+# What is NoxXB Evolution Version? This evolution version is designed to be more efficient and more powerful and is equipped with protection to detect whether your device supports this tweak
