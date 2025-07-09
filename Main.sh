@@ -13,13 +13,9 @@ DIR_INSTALL_FUNCTION="/data/local/tmp/install.sh"
 UNINSTALL_FUNCTION_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/uninstall.sh"
 DIR_UNINSTALL_FUNCTION="/data/local/tmp/uninstall.sh"
 
-echo "--- NoxXB - PRO Maintenance Check ---"
-
 # Mendapatkan nama skrip pemanggil (misalnya: exe.sh atau rmv.sh)
 # $0 akan berisi jalur lengkap, kita ambil nama file dasarnya
 calling_script_name=$(basename "$0")
-
-echo "Skrip pemanggil terdeteksi: $calling_script_name"
 
 # Kita akan tentukan tipe operasi berdasarkan nama skrip pemanggil
 operation_type=""
@@ -35,8 +31,7 @@ fi
 # $1, $2, dst. akan menjadi argumen yang diteruskan setelah nama skrip pemanggil
 first_argument="$1" # Ini akan menjadi "com.dts.freefiremax" dalam contoh Anda
 
-if [[ "$operation_type" == "INSTALL" ]]; then
-    echo "Terdeteksi operasi: Instalasi"
+if [[ "$operation_type" == "INSTALL" ]]; then    
     if [[ "$INSTALL_UPDATE_IN_PROGRESS" == "true" ]]; then
         echo "PEMBERITAHUAN: Fungsi instalasi NoxXB - PRO sedang dalam pembaruan."
         echo "Mohon coba lagi nanti."
@@ -47,8 +42,7 @@ if [[ "$operation_type" == "INSTALL" ]]; then
         # Jalankan fungsi instalasi, dan teruskan argumen tambahan padanya
         sh "$DIR_INSTALL_FUNCTION" "$first_argument" "$2" "$3" # dst, teruskan semua argumen        
     fi
-elif [[ "$operation_type" == "UNINSTALL" ]]; then
-    echo "Terdeteksi operasi: Uninstalasi"
+elif [[ "$operation_type" == "UNINSTALL" ]]; then    
     if [[ "$UNINSTALL_UPDATE_IN_PROGRESS" == "true" ]]; then
         echo "PEMBERITAHUAN: Fungsi uninstalasi NoxXB - PRO sedang dalam pembaruan."
         echo "Mohon coba lagi nanti."
