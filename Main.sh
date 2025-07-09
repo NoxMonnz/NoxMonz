@@ -6,8 +6,8 @@ DIR_INSTALL_FUNCTION="/data/local/tmp/install.sh"
 UNINSTALL_FUNCTION_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/uninstall.sh"
 DIR_UNINSTALL_FUNCTION="/data/local/tmp/uninstall.sh"
 
-INSTALL_UPDATE_IN_PROGRESS="false"
-UNINSTALL_UPDATE_IN_PROGRESS="false"
+INSTALL_UPDATE_IN_PROGRESS="true"
+UNINSTALL_UPDATE_IN_PROGRESS="true"
 
 calling_script_name=$(basename "$0")
 
