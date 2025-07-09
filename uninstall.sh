@@ -18,6 +18,7 @@ chmod +x /data/local/tmp/function-deleted.sh
 source "/data/local/tmp/function-deleted.sh"
 source "/data/local/tmp/design.sh"
 
+sleep 0.2 && Delete_log
 sleep 0.2 && echo_design1
 sleep 0.2 && echo_design
 sleep 2
