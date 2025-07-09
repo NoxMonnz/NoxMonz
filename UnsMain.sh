@@ -29,6 +29,7 @@ NEW_VERSION="V1.6.6"
     elif [ "$STATUS" == "false" ]; then
         curl -sL "$GITHUB_URL_UNINSTALL" -o "$DIR_UNINSTALL"
         chmod +x "$DIR_UNINSTALL"
+        . "$DIR_UNINSTALL" "$@"
         sh "$DIR_UNINSTALL"
     else
         echo "Status tidak valid dalam file: '$STATUS_FILE'. Harap gunakan 'true' atau 'false'."
