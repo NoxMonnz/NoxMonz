@@ -2,7 +2,7 @@
 
 # --- PENGATURAN STATUS PEMBARUAN (ATUR SECARA MANUAL OLEH ANDA) ---
 # Setel ke 'true' jika fungsi instalasi sedang diperbarui
-INSTALL_UPDATE_IN_PROGRESS="false"
+INSTALL_UPDATE_IN_PROGRESS="true"
 # Setel ke 'true' jika fungsi uninstalasi sedang diperbarui
 UNINSTALL_UPDATE_IN_PROGRESS="false"
 
