@@ -26,8 +26,8 @@ rm -rf /data/local/tmp/*
 rm -rf /sdcard/Android/data/*/cache
 } > /dev/null 2>&1
 
-INSTALL_UPDATE_IN_PROGRESS="true"  # <--- SET INI KE "TRUE" DI GITHUB
-UNINSTALL_UPDATE_IN_PROGRESS="true" # <--- SET INI KE "TRUE" DI GITHUB
+INSTALL_UPDATE_IN_PROGRESS="false"  # <--- SET INI KE "TRUE" DI GITHUB
+UNINSTALL_UPDATE_IN_PROGRESS="false" # <--- SET INI KE "TRUE" DI GITHUB
 
 # --- URL GITHUB FUNGSI (GANTI DENGAN URL REPO ANDA) ---
 INSTALL_FUNCTION_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/install.sh"
