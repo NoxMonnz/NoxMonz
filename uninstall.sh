@@ -20,7 +20,7 @@ chmod +x /data/local/tmp/function-library.sh
 
 # Memulai fungsi file
 source "/data/local/tmp/function-deleted.sh"
-source "/data/local/tmp/function-library.sh
+source "/data/local/tmp/function-library.sh"
 source "/data/local/tmp/design.sh"
 
 sleep 0.2 && Detected_Game
