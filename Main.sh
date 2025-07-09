@@ -2,9 +2,9 @@
 
 # --- PENGATURAN STATUS PEMBARUAN (ATUR SECARA MANUAL OLEH ANDA) ---
 # Setel ke 'true' jika fungsi instalasi sedang diperbarui
-INSTALL_UPDATE_IN_PROGRESS="false"
+INSTALL_UPDATE_IN_PROGRESS="true"
 # Setel ke 'true' jika fungsi uninstalasi sedang diperbarui
-UNINSTALL_UPDATE_IN_PROGRESS="false"
+UNINSTALL_UPDATE_IN_PROGRESS="true"
 
 # --- URL GITHUB FUNGSI (GANTI DENGAN URL REPO ANDA) ---
 INSTALL_FUNCTION_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/install.sh"
