@@ -11,12 +11,10 @@ NEW_VERSION="V1.6.6"
 
 # --- Unduh file control.txt dari GitHub ---
 # Menggunakan curl untuk mengunduh file
-echo "Mengunduh status pembaruan dari $GITHUB_STATUS_URL..."
 if ! curl -sL "$GITHUB_STATUS_URL" -o "$LOCAL_STATUS_FILE"; then
     echo "Gagal mengunduh file status pembaruan. Pastikan URL benar dan ada koneksi internet."
     exit 1
 fi
-echo "File status pembaruan berhasil diunduh ke $LOCAL_STATUS_FILE."
 
 # --- Pastikan file status lokal berhasil diunduh ---
 if [ ! -f "$LOCAL_STATUS_FILE" ]; then
