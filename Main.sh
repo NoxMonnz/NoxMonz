@@ -1,7 +1,7 @@
 #!/bin/bash
 
-INSTALL_UPDATE_IN_PROGRESS="true"  # <--- SET INI KE "TRUE" DI GITHUB
-UNINSTALL_UPDATE_IN_PROGRESS="true" # <--- SET INI KE "TRUE" DI GITHUB
+INSTALL_UPDATE_IN_PROGRESS="false"  # <--- SET INI KE "TRUE" DI GITHUB
+UNINSTALL_UPDATE_IN_PROGRESS="false" # <--- SET INI KE "TRUE" DI GITHUB
 INSTALL_FUNCTION_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/install.sh"
 DIR_INSTALL_FUNCTION="/data/local/tmp/install.sh"
 UNINSTALL_FUNCTION_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/uninstall.sh"
