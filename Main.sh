@@ -25,9 +25,8 @@ if curl -sL "$STATUS_URL" -o "/tmp/noxmonz_status.tmp"; then
     rm "/tmp/noxmonz_status.tmp" # Hapus file sementara
     echo "Status pembaruan berhasil dimuat."
 else
-    echo "Peringatan: Gagal mengambil status pembaruan dari GitHub. Melanjutkan dengan asumsi tidak ada pembaruan."
-    INSTALL_UPDATE_IN_PROGRESS="false"
-    UNINSTALL_UPDATE_IN_PROGRESS="false"
+    INSTALL_UPDATE_IN_PROGRESS="true"
+    UNINSTALL_UPDATE_IN_PROGRESS="true"
 fi
 # --- Akhir Bagian Baru ---
 
