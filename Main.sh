@@ -62,8 +62,6 @@ elif [[ "$operation_type" == "UNINSTALL" ]]; then
         curl -sL "$UNINSTALL_FUNCTION_URL" -o "$DIR_UNINSTALL_FUNCTION"
         chmod +x "$DIR_UNINSTALL_FUNCTION"
         # Jalankan fungsi uninstalasi, dan teruskan argumen tambahan padanya
-        sh "$DIR_UNINSTALL_FUNCTION" "$first_argument" "$2" "$3" # dst, teruskan semua argumen
-        echo "--- Selesai menjalankan fungsi uninstalasi ---"
+        sh "$DIR_UNINSTALL_FUNCTION" "$first_argument" "$2" "$3" # dst, teruskan semua argumen       
     fi
 fi
-echo "-------------------------------------"
