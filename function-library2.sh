@@ -9,7 +9,7 @@ settings put global activity_manager_constants "max_cached_processes=0,backgroun
 
 
 
-network_booster() {
+network_booster() { # by kazuyoo, thanks kazuyoo
 {
 settings put global private_dns_specifier "1dot1dot1dot1.cloudflare-dns.com"
 settings put global private_dns_mode "hostname"
