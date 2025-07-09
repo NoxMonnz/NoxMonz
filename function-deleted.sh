@@ -171,6 +171,29 @@ soc=$(getprop ro.soc.manufacturer)
 
 
 network_default() {
+settings delete global download_manager_recommended_max_bytes_over_mobile
+settings delete global download_manager_max_bytes_over_mobile
+settings delete global tether_offload_disabled
+settings delete global data_activity_timeout_mobile
+settings delete global connectivity_metrics_buffer_size
+settings delete system nearby_scanning_permission_allowed
+settings delete system nearby_scanning_enabled
+settings delete global data_activity_timeout_wifi
+settings delete global enable_cellular_on_boot
+settings delete global wifi_score_params
+settings delete global wifi_coverage_extend_feature_enabled
+settings delete global wifi_networks_available_notification_on
+settings delete global wifi_poor_connection_warning
+settings delete global wifi_verbose_logging_enabled
+settings delete global wifi_suspend_optimizations_enabled
+settings delete global wifi_wakeup_enabled
+settings delete global network_avoid_bad_wifi
+settings delete global wifi_country_code
+settings delete global wifi_framework_scan_interval_ms
+settings delete global wifi_supplicant_scan_interval_ms
+settings delete global wifi_watchdog_poor_network_test_enabled
+settings delete global wifi_scan_always_enabled
+settings delete global wifi_scan_throttle_enabled   
 settings put global private_dns_specifier ""
 settings put global private_dns_mode "off"
 }
