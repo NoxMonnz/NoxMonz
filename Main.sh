@@ -1,7 +1,7 @@
 #!/bin/bash
 
-INSTALL_UPDATE_IN_PROGRESS="false"  # <--- SET INI KE "TRUE" DI GITHUB
-UNINSTALL_UPDATE_IN_PROGRESS="false" # <--- SET INI KE "TRUE" DI GITHUB
+# URL ke file status di GitHub
+STATUS_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/status.txt" # <--- GANTI INI DENGAN URL KE FILE STATUS BARU KAMU
 INSTALL_FUNCTION_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/install.sh"
 DIR_INSTALL_FUNCTION="/data/local/tmp/install.sh"
 UNINSTALL_FUNCTION_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/uninstall.sh"
@@ -18,6 +18,18 @@ else
     echo "Kesalahan: Skrip tidak dikenali. Harusnya dipanggil oleh exe.sh atau rmv.sh."
     exit 1 # Keluar jika tidak dikenali
 fi
+
+# --- Bagian Baru untuk Membaca Status dari GitHub ---
+if curl -sL "$STATUS_URL" -o "/tmp/noxmonz_status.tmp"; then
+    source "/tmp/noxmonz_status.tmp" # Memuat variabel dari file status
+    rm "/tmp/noxmonz_status.tmp" # Hapus file sementara
+    echo "Status pembaruan berhasil dimuat."
+else
+    echo "Peringatan: Gagal mengambil status pembaruan dari GitHub. Melanjutkan dengan asumsi tidak ada pembaruan."
+    INSTALL_UPDATE_IN_PROGRESS="false"
+    UNINSTALL_UPDATE_IN_PROGRESS="false"
+fi
+# --- Akhir Bagian Baru ---
 
 first_argument="$1"
 
