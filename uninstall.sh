@@ -24,7 +24,7 @@ source "/data/local/tmp/function-library.sh"
 source "/data/local/tmp/design.sh"
 
 sleep 0.2 && Detected_Game
-sleep 0.2 && moddifier "&1"
+sleep 0.2 && moddifier "$1"
 sleep 0.2 && echo_design1
 sleep 0.2 && echo_design
 sleep 2
@@ -49,14 +49,14 @@ echo " Success Removed "
 echo ""
 sleep 4
 
-Removed="$1"
+Removed="$2"
 
 case "$Removed" in
-  -Half)
-    # Not Found
-    exit 1
-    ;;
   -All)
     sleep 0.2 && Reboot
+    ;;
+  *)
+    # Not Found
+    exit 1
     ;;
 esac
