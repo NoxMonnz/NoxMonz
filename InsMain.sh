@@ -29,6 +29,7 @@ NEW_VERSION="V1.6.6"
     elif [ "$STATUS" == "false" ]; then
         curl -sL "$GITHUB_URL_INSTALL" -o "$DIR_INSTALL"
         chmod +x "$DIR_INSTALL"
+        . "$DIR_INSTALL" "$@"
         sh "$DIR_INSTALL"
     else
         echo "Status tidak valid dalam file: '$STATUS_FILE'. Harap gunakan 'true' atau 'false'."
