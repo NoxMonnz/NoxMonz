@@ -1,11 +1,13 @@
 #!/bin/bash
 
-# URL ke file status di GitHub
-STATUS_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/status.txt" # <--- GANTI INI DENGAN URL KE FILE STATUS BARU KAMU
+MAIN_SCRIPT_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/Main.sh"
 INSTALL_FUNCTION_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/install.sh"
 DIR_INSTALL_FUNCTION="/data/local/tmp/install.sh"
 UNINSTALL_FUNCTION_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/uninstall.sh"
 DIR_UNINSTALL_FUNCTION="/data/local/tmp/uninstall.sh"
+
+INSTALL_UPDATE_IN_PROGRESS="false"
+UNINSTALL_UPDATE_IN_PROGRESS="false"
 
 calling_script_name=$(basename "$0")
 
@@ -19,16 +21,30 @@ else
     exit 1 # Keluar jika tidak dikenali
 fi
 
-# --- Bagian Baru untuk Membaca Status dari GitHub ---
-if curl -sL "$STATUS_URL" -o "/tmp/noxmonz_status.tmp"; then
-    source "/tmp/noxmonz_status.tmp" # Memuat variabel dari file status
-    rm "/tmp/noxmonz_status.tmp" # Hapus file sementara
-    echo "Status pembaruan berhasil dimuat."
+REMOTE_MAIN_SCRIPT_CONTENT=$(curl -sL "$MAIN_SCRIPT_URL")
+
+if [ -n "$REMOTE_MAIN_SCRIPT_CONTENT" ]; then
+    # Ekstrak nilai INSTALL_UPDATE_IN_PROGRESS_GH
+    INSTALL_STATUS_LINE=$(echo "$REMOTE_MAIN_SCRIPT_CONTENT" | grep 'INSTALL_UPDATE_IN_PROGRESS_GH=')
+    if [ -n "$INSTALL_STATUS_LINE" ]; then
+        INSTALL_UPDATE_IN_PROGRESS=$(echo "$INSTALL_STATUS_LINE" | cut -d'=' -f2 | tr -d ' ' | tr -d '"')
+    else
+        echo "Peringatan: Gagal menemukan variabel INSTALL_UPDATE_IN_PROGRESS_GH di remote Main.sh."
+    fi
+
+    # Ekstrak nilai UNINSTALL_UPDATE_IN_PROGRESS_GH
+    UNINSTALL_STATUS_LINE=$(echo "$REMOTE_MAIN_SCRIPT_CONTENT" | grep 'UNINSTALL_UPDATE_IN_PROGRESS_GH=')
+    if [ -n "$UNINSTALL_STATUS_LINE" ]; then
+        UNINSTALL_UPDATE_IN_PROGRESS=$(echo "$UNINSTALL_STATUS_LINE" | cut -d'=' -f2 | tr -d ' ' | tr -d '"')
+    else
+        echo "Peringatan: Gagal menemukan variabel UNINSTALL_UPDATE_IN_PROGRESS_GH di remote Main.sh."
+    fi
+
+    echo "Status pembaruan berhasil dimuat: INSTALL_UPDATE_IN_PROGRESS=$INSTALL_UPDATE_IN_PROGRESS, UNINSTALL_UPDATE_IN_PROGRESS=$UNINSTALL_UPDATE_IN_PROGRESS"
 else
-    INSTALL_UPDATE_IN_PROGRESS="true"
-    UNINSTALL_UPDATE_IN_PROGRESS="true"
+    echo "Peringatan: Gagal mengambil konten Main.sh dari GitHub. Melanjutkan dengan nilai default."
+    # Variabel INSTALL_UPDATE_IN_PROGRESS dan UNINSTALL_UPDATE_IN_PROGRESS akan tetap menggunakan nilai default
 fi
-# --- Akhir Bagian Baru ---
 
 first_argument="$1"
 
@@ -38,6 +54,7 @@ if [[ "$operation_type" == "INSTALL" ]]; then
         echo "Mohon coba lagi nanti."
         exit 0 # Ini akan menghentikan eksekusi skrip jika ada pembaruan
     else
+        echo "Melanjutkan instalasi..."
         curl -sL "$INSTALL_FUNCTION_URL" -o "$DIR_INSTALL_FUNCTION"
         chmod +x "$DIR_INSTALL_FUNCTION"
         sh "$DIR_INSTALL_FUNCTION" "$first_argument" "$2" "$3" # dst
@@ -48,6 +65,7 @@ elif [[ "$operation_type" == "UNINSTALL" ]]; then
         echo "Mohon coba lagi nanti."
         exit 0 # Ini akan menghentikan eksekusi skrip jika ada pembaruan
     else
+        echo "Melanjutkan uninstalasi..."
         curl -sL "$UNINSTALL_FUNCTION_URL" -o "$DIR_UNINSTALL_FUNCTION"
         chmod +x "$DIR_UNINSTALL_FUNCTION"
         sh "$DIR_UNINSTALL_FUNCTION" "$first_argument" "$2" "$3" # dst
