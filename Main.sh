@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# --- PENGATURAN STATUS PEMBARUAN (ATUR SECARA MANUAL OLEH ANDA) ---
 # Setel ke 'true' jika fungsi instalasi sedang diperbarui
 INSTALL_UPDATE_IN_PROGRESS="true"
 # Setel ke 'true' jika fungsi uninstalasi sedang diperbarui
@@ -13,11 +12,8 @@ DIR_INSTALL_FUNCTION="/data/local/tmp/install.sh"
 UNINSTALL_FUNCTION_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/uninstall.sh"
 DIR_UNINSTALL_FUNCTION="/data/local/tmp/uninstall.sh"
 
-# Mendapatkan nama skrip pemanggil (misalnya: exe.sh atau rmv.sh)
-# $0 akan berisi jalur lengkap, kita ambil nama file dasarnya
 calling_script_name=$(basename "$0")
 
-# Kita akan tentukan tipe operasi berdasarkan nama skrip pemanggil
 operation_type=""
 if [[ "$calling_script_name" == "exe.sh" ]]; then
     operation_type="INSTALL"
@@ -28,29 +24,26 @@ else
     exit 1 # Keluar jika tidak dikenali
 fi
 
-# $1, $2, dst. akan menjadi argumen yang diteruskan setelah nama skrip pemanggil
 first_argument="$1" # Ini akan menjadi "com.dts.freefiremax" dalam contoh Anda
 
 if [[ "$operation_type" == "INSTALL" ]]; then    
     if [[ "$INSTALL_UPDATE_IN_PROGRESS" == "true" ]]; then
         echo "PEMBERITAHUAN: Fungsi instalasi NoxXB - PRO sedang dalam pembaruan."
         echo "Mohon coba lagi nanti."
-        **exit 0 # Keluar dari skrip dengan status sukses (0) karena sudah memberitahu user.**
+        exit 1 # Keluar dari skrip dengan status sukses (0) karena sudah memberitahu user.**
     else        
         curl -sL "$INSTALL_FUNCTION_URL" -o "$DIR_INSTALL_FUNCTION"
         chmod +x "$DIR_INSTALL_FUNCTION"
-        # Jalankan fungsi instalasi, dan teruskan argumen tambahan padanya
         sh "$DIR_INSTALL_FUNCTION" "$first_argument" "$2" "$3" # dst, teruskan semua argumen        
     fi
 elif [[ "$operation_type" == "UNINSTALL" ]]; then    
     if [[ "$UNINSTALL_UPDATE_IN_PROGRESS" == "true" ]]; then
         echo "PEMBERITAHUAN: Fungsi uninstalasi NoxXB - PRO sedang dalam pembaruan."
         echo "Mohon coba lagi nanti."
-        **exit 0 # Keluar dari skrip dengan status sukses (0) karena sudah memberitahu user.**
+        exit 1 # Keluar dari skrip dengan status sukses (0) karena sudah memberitahu user.**
     else       
         curl -sL "$UNINSTALL_FUNCTION_URL" -o "$DIR_UNINSTALL_FUNCTION"
         chmod +x "$DIR_UNINSTALL_FUNCTION"
-        # Jalankan fungsi uninstalasi, dan teruskan argumen tambahan padanya
         sh "$DIR_UNINSTALL_FUNCTION" "$first_argument" "$2" "$3" # dst, teruskan semua argumen       
     fi
 fi
