@@ -41,14 +41,11 @@ if [[ "$operation_type" == "INSTALL" ]]; then
         echo "PEMBERITAHUAN: Fungsi instalasi NoxXB - PRO sedang dalam pembaruan."
         echo "Mohon coba lagi nanti."
         **exit 0 # Keluar dari skrip dengan status sukses (0) karena sudah memberitahu user.**
-    else
-        echo "Tidak ada pembaruan untuk fungsi instalasi. Mengunduh dan menjalankan fungsi instalasi..."
-        echo "Argumen tambahan: $first_argument" # Menampilkan argumen setelah nama skrip
+    else        
         curl -sL "$INSTALL_FUNCTION_URL" -o "$DIR_INSTALL_FUNCTION"
         chmod +x "$DIR_INSTALL_FUNCTION"
         # Jalankan fungsi instalasi, dan teruskan argumen tambahan padanya
-        sh "$DIR_INSTALL_FUNCTION" "$first_argument" "$2" "$3" # dst, teruskan semua argumen
-        echo "--- Selesai menjalankan fungsi instalasi ---"
+        sh "$DIR_INSTALL_FUNCTION" "$first_argument" "$2" "$3" # dst, teruskan semua argumen        
     fi
 elif [[ "$operation_type" == "UNINSTALL" ]]; then
     echo "Terdeteksi operasi: Uninstalasi"
@@ -56,9 +53,7 @@ elif [[ "$operation_type" == "UNINSTALL" ]]; then
         echo "PEMBERITAHUAN: Fungsi uninstalasi NoxXB - PRO sedang dalam pembaruan."
         echo "Mohon coba lagi nanti."
         **exit 0 # Keluar dari skrip dengan status sukses (0) karena sudah memberitahu user.**
-    else
-        echo "Tidak ada pembaruan untuk fungsi uninstalasi. Mengunduh dan menjalankan fungsi uninstalasi..."
-        echo "Argumen tambahan: $first_argument" # Menampilkan argumen setelah nama skrip
+    else       
         curl -sL "$UNINSTALL_FUNCTION_URL" -o "$DIR_UNINSTALL_FUNCTION"
         chmod +x "$DIR_UNINSTALL_FUNCTION"
         # Jalankan fungsi uninstalasi, dan teruskan argumen tambahan padanya
