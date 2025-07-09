@@ -18,35 +18,6 @@ done
 
 
 
-Delete_log() { # By Kazuyoo
-for DIR in /data/data/*; do
-  if [ -d "${DIR}" ]; then
-    rm -rf ${DIR}/cache/*
-    rm -rf ${DIR}/no_backup/*
-    rm -rf ${DIR}/app_webview/*
-    rm -rf ${DIR}/code_cache/*
-  fi
-done
-
-# Delete Logs
-{
-rm -rf /data/{anr,log,tombstones,log_other_mode}/*
-rm -rf /cache/*.{apk,tmp}
-rm -rf /dev/log/*
-rm -rf /data/system/{dropbox,usagestats,package_cache}/*
-rm -rf /sys/kernel/debug/*
-rm -rf /data/local/tmp*
-rm -rf /data/dalvik-cache
-rm -rf /data/media/0/{DCIM,Pictures,Music,Movies}/.thumbnails
-rm -rf /data/media/0/{mtklog,MIUI/Gallery,MIUI/.debug_log,MIUI/BugReportCache}
-rm -rf /data/vendor/thermal/{config,*.dump,*_history*.dump}
-rm -rf /data/local/tmp/*
-rm -rf /sdcard/Android/data/*/cache
-} > /dev/null 2>&1
-}
-
-
-
 GarbageCleaner() {
 # By Sukitooo, Thanks Sukitoo
 (for a in $(find /sdcard/ -name .thumbnails;find /sdcard/ -name *.log);do rm -rf $a;done;pm trim-caches 999G)>/dev/null 2>&1&
