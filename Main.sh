@@ -1,36 +1,3 @@
-#!/system/bin/sh
-
-INSTALL_UPDATE_IN_PROGRESS="false"
-UNINSTALL_UPDATE_IN_PROGRESS="false"
-INSTALL_FUNCTION_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/install.sh"
-DIR_INSTALL_FUNCTION="/data/local/tmp/install.sh"
-UNINSTALL_FUNCTION_URL="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/uninstall.sh"
-DIR_UNINSTALL_FUNCTION="/data/local/tmp/uninstall.sh"
-
-local script_type=$1
-
-if [[ "$script_type" == "exe.sh" ]]; then
-    if [[ "$INSTALL_UPDATE_IN_PROGRESS" == "true" ]]; then
-        echo "PEMBERITAHUAN: Fungsi instalasi NoxXB - PRO sedang dalam pembaruan"
-        echo "Mohon coba lagi nanti."
-    else
-        curl -sL "$INSTALL_FUNCTION_URL" -o "$DIR_INSTALL_FUNCTION"
-        chmod +x /data/local/tmp/install.sh
-        sh /data/local/tmp/install.sh
-    fi
-elif [[ "$script_type" == "rmv.sh" ]]; then
-    if [[ "$UNINSTALL_UPDATE_IN_PROGRESS" == "true" ]]; then
-        echo "PEMBERITAHUAN: Fungsi uninstalasi NoxXB - PRO sedang dalam pembaruan"
-        echo "Mohon coba lagi nanti."
-    else
-        curl -sL "$UNINSTALL_FUNCTION_URL" -o "$DIR_UNINSTALL_FUNCTION"
-        chmod +x /data/local/tmp/uninstall.sh
-        sh /data/local/tmp/uninstall.sh
-    fi
-else
-        echo "Kesalahan: Tipe skrip tidak dikenali. Harusnya 'exe.sh' atau 'rmv.sh'."
-    fi
-
 #!/bin/bash
 
 INSTALL_UPDATE_IN_PROGRESS="false"
