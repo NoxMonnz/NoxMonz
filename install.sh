@@ -1,5 +1,10 @@
 #!/system/bin/sh
 
+# Mulai ulang file
+rm -f /data/local/tmp/design.sh
+rm -f /data/local/tmp/function-library.sh
+rm -f /data/local/tmp/function-library2.sh
+
 # Argument link GitHub
 GITHUB_FUNCTIONS_URL3="https://raw.githubusercontent.com/NoxMonnz/NoxMonz/main/design.sh"
 LOCAL_FUNCTIONS_FILE3="/data/local/tmp/design.sh"
