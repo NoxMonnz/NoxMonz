@@ -60,7 +60,7 @@ sleep 4
 Removed="$2"
 
 case "$Removed" in
-  -All)
+  -A)
     sleep 0.2 && Reboot
     ;;
   *)
