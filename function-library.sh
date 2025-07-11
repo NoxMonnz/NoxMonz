@@ -51,7 +51,7 @@ if [ "$checked" = "true" ]; then
   echo " Engine: $ENGINE_VALUE"
   sleep 1
   echo " Beckend: $BECKEND_VALUE "
-  else
+else
   echo " Your Phone Not Supported Vulkan API!"
   sleep 0.5
   echo " Auto Set To OpenGL "
