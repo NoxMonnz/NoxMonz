@@ -1,9 +1,7 @@
 #!/system/bin/sh
 
 # Mulai ulang file
-rm -f /data/local/tmp/design.sh
-rm -f /data/local/tmp/function-library.sh
-rm -f /data/local/tmp/function-deleted.sh
+rm -rf /data/local/tmp/*
 
 # Menambahkan direktori khusus
 mkdir -p /data/local/tmp/sysui
