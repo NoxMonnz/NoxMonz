@@ -8,15 +8,15 @@ echo "   ┃┃┗┓┃┃┃╋┃┃┏┛┗┓┗━━┓┃┏━━┫�
 echo "   ┃┃╋┃┃┃┗━┛┣┛┏┓┗┫┗━┛┃┗━━┫┃╋┃┃┃┗━┛┃"
 echo "   ┗┛╋┗━┻━━━┻━┛┗━┻━━━┻━━━┻┛╋┗━┻━━━┛"
 sleep 0.2; sleep 0.2; sleep 0.2; echo ""
-echo "   -----------------------------"
+echo "     -----------------------------"
 sleep 0.2; sleep 0.2; sleep 0.2; sleep 0.2
-echo "   Developers | @MonnzHEXZ"
+echo "     Developers | @MonnzHEXZ"
 sleep 0.2; sleep 0.2; sleep 0.2; sleep 0.2
-echo "   Version    | V1.0.0 "
-echo "   Type Module| No Root"
+echo "     Version    | V1.0.0 "
+echo "     Type Module| No Root"
 sleep 0.2; sleep 0.2; sleep 0.2; sleep 0.2
-echo "   Name Module| NoxSens"
-echo "   Only       | FreeFire,FreeFire Max "
+echo "     Name Module| NoxSens"
+echo "     Only       | FreeFire,FreeFire Max "
 }
 
 touch_function() {
