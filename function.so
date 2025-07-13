@@ -1,0 +1,457 @@
+# for NoxSens module
+
+design() {
+echo "   ┏━┓╋┏┳━━━┳━┓┏━┳━━━┳━━━┳━┓╋┏┳━━━┓"
+echo "   ┃┃┗┓┃┃┏━┓┣┓┗┛┏┫┏━┓┃┏━━┫┃┗┓┃┃┏━┓┃"
+echo "   ┃┏┓┗┛┃┃╋┃┃┗┓┏┛┃┗━━┓┗━━┫┏┓┗┛┃┗━━┓"
+echo "   ┃┃┗┓┃┃┃╋┃┃┏┛┗┓┗━━┓┃┏━━┫┃┗┓┃┣━━┓┃"
+echo "   ┃┃╋┃┃┃┗━┛┣┛┏┓┗┫┗━┛┃┗━━┫┃╋┃┃┃┗━┛┃"
+echo "   ┗┛╋┗━┻━━━┻━┛┗━┻━━━┻━━━┻┛╋┗━┻━━━┛"
+sleep 0.2; sleep 0.2; sleep 0.2; echo ""
+echo "   -----------------------------"
+sleep 0.2; sleep 0.2; sleep 0.2; sleep 0.2
+echo "   Developers | @MonnzHEXZ"
+sleep 0.2; sleep 0.2; sleep 0.2; sleep 0.2
+echo "   Version    | V1.0.0 "
+echo "   Type Module| No Root"
+sleep 0.2; sleep 0.2; sleep 0.2; sleep 0.2
+echo "   Name Module| NoxSens"
+echo "   Only       | FreeFire,FreeFire Max "
+}
+
+touch_function() {
+{
+#touch_global
+settings put global touch_sampling_rate 240
+settings put global input.sampling_rate 1000
+settings put global window_animation_scale 0.1
+settings put global transition_animation_scale 0.1
+settings put global animator_duration_scale 0.1
+settings put global touch_sampling_rate 240
+settings put global input.sampling_rate 1000
+settings put global input.delay 0
+settings put global input.resampling 1
+settings put global input.gesture_prediction 0
+settings put global input.touch_boost 1
+settings put global min.touch.major 0
+settings put global min.touch.minor 0
+settings put global surface_flinger.set_idle_timer_ms 0
+settings put global surface_flinger.set_touch_timer_ms 0
+settings put global surface_flinger.set_display_power_timer_ms 0
+settings put global touch.pressure.scale 0.1
+settings put global touch.size.scale 0.1
+settings put global settings_enable_monitor_phantom_procs false
+settings put global surface_flinger.start_graphics_allocator_service true
+settings put global surface_flinger.running_without_sync_framework true
+settings put global surface_flinger.use_context_priority 1
+settings put global tactile_feedback_enabled 1
+settings put global windowsmgr.support_low_latency_touch true
+settings put global fw.bservice_enable true
+settings put global fw.bg_apps_limit 4
+settings put global fw.bservice_limit 4
+settings put global fw.bservice_age 10000
+settings put global windowsmgr.max_events_per_sec 180
+settings put global min_pointer_dur 8
+settings put global product.multi_touch_enabled true
+settings put global securestorage.knox false
+settings put global maximum_obscuring_opacity_for_touch 0.5
+settings put global DragMinSwitchSpeed 99999.0px/s
+settings put global SwipeMaxWidthRatio 1
+settings put global KeyRepeatDelay 0
+settings put global KeyRepeatTimeout 0
+settings put global LOSS_OF_FOCUS_BY_MOUSE_MOVEMENT DISABLED
+settings put global MOUSEX_AIM_LEVEL 95%
+settings put global sf.disable_smooth_effect true
+
+#touch_secure
+settings put secure pointer_speed 10
+settings put secure display_density_forced 520
+settings put secure touch_distance_scale 0
+settings put secure view_scroll_friction 0
+settings put secure multi_touch_enabled 1
+settings put secure assist_touch_gesture_enabled 0
+settings put secure long_press_timeout 300
+settings put secure multi_press_timeout 300
+settings put secure touch_size_scale 5
+settings put secure show_rotation_suggestions 0
+settings put secure touch_size_bias 5
+settings put secure touch_exploration_enabled 1
+settings put secure touch_orientationAware 1
+settings put secure touch_pressure_scale 0.00000125
+settings put secure dev.pm.dyn_samplingrate 1
+settings put secure multi_press_timeout 300
+
+#touch_system
+settings put system tap_duration 20
+settings put system view.scroll_friction 3
+settings put system persist.sys.touch.sampling_boost 1
+settings put system touch.boost true
+settings put system touch.responsive 1
+settings put system devices_virtual_input_input1_polling_rate 240
+settings put system persist.sys.touch.sampling_boost 1
+settings put system pointer_speed 5
+settings put system touch.boost true
+settings put system touch.responsive 1
+settings put system touch_sampling_rate 120
+settings put system touch_size_calibration geometric
+settings put system touch_stats {"min":1,"max":1}
+settings put system touchX_debuggable 1
+settings put system touch_boost_threshold 5
+settings put system touch_feature_gamemode_enable 1
+settings put system touch_input_sensitivity 1
+settings put system touch_rate_control 0
+settings put system touch_response_rate 1
+settings put system touch_sampling_rate_override 1
+settings put system touch_sensitivity 1_2
+settings put system touch_slop 8
+settings put system touch_switch_set_touchscreen 14005
+settings put system touch_tap_sensitivity 1
+settings put system touchpanel_game_switch_enable 1
+settings put system haptic_feedback_intensity 50
+settings put system af.resampler.quality 255
+settings put system scrollingcache 3
+settings put system service.touch.tpf 30
+settings put system lowThreshold 0
+settings put system highThreshold 0
+settings put system VirtualKeyQuietTime 0
+settings put system KeyRepeatDelay 0
+settings put system KeyRepeatTimeout 0
+settings put system show_touches 0
+settings put system vsync.disable.fps.limit 1
+settings put system table.framerate 120
+settings put system disable.hwc.delay 1
+settings put system Touc_xRotation  360
+settings put system touchswipedeadzone 5
+settings put system touchscreen_hovering 0
+settings put system touchscreen_sensitivity_mode 3
+settings put system touchscreen_pressure_calibration 1023
+settings put system touchscreen_threshold 9
+settings put system touchfeature.gamemode.enable true
+settings put system r.setframepace 120
+settings put system touch_switch_set_touchscreen 14005
+settings put system touchpanel_game_switch_enable 1
+settings put system touchpanel_oppo_tp_direction 1
+settings put system touchpanel_oppo_tp_limit_enable 0
+settings put system touchpanel_oplus_tp_limit_enable 0
+settings put system touchpanel_oplus_tp_direction 1
+settings put system use_dithering 0
+settings put system use_dithering false
+settings put system qti.inputopts.enable true
+settings put system qti.inputopts.movetouchslop 0.1
+settings put system MovementSpeedRatio 1
+settings put system ZoomSpeedRatio 1
+settings put system SwipeTransitionAngleCosine 3.6
+settings put system mot.proximity.distance 1
+settings put system PointerVelocityControlParameters 1
+settings put system device.internal 1
+settings put system touchscreen_sensitivity 10
+settings put system touchscreen_min_press_time 50
+settings put system touchscreen_hevoring 0
+settings put system touchscreen_gesture_mode 1
+settings put system touchscreen_sensitivity_threshold 9
+settings put system touchscreen_double_tap_speed 75
+settings put system touchscreen_sensitivity_scale 1.5
+settings put system qti.inputopts.enable true
+settings put system qti.inputopts.movetouchslop 0.6
+settings put system touch.orientationAware 1
+settings put system SurfaceOrientation auto
+settings put system touch.size.calibration geometric
+settings put system touch.size.isSummed 1
+settings put system touch.orientation.calibration auto
+settings put system touch.distance.scale auto
+settings put system touch.coverage.calibration octagram
+settings put system touch.gesturemode spots
+settings put system MovementSpeedRatio auto
+settings put system pm.dyn_samplingrate 9999999999999999999999999999
+settings put system touch.pressure.calibration auto
+settings put system scroll.accelerated.hw true
+settings put system ui.hwframes 9999999999999999999999999999
+settings put system force_high_end_gfx 1
+settings put system sf.disable_smooth_effect true
+settings put system max_num_touch auto
+settings put system maxeventspersec 9999999999999999999999999999
+settings put system resampler.quality 255
+settings put system touch.sampling rate 720
+settings put system adaptive_touch_sensitivity speed
+settings put system touch.orientationAware 0
+settings put system PressureForID 0.01
+settings put system QuietInterval 0.1ms
+settings put system MultitouchMinDistance 1px
+settings put system AIM_SENSITIVITY_TRANSITION_TIME GRADUAL
+settings put system APP_SWITCH_DELAY_TIME false
+settings put system AbsoluteXForID SpeedForID
+settings put system AccelerationX true
+settings put system AccelerationY true
+settings put system DoubleTouch OEM
+settings put system PowerbuttonTapping 0
+settings put system touch.assistant.enabled 0
+settings put system type.touch_speed true
+settings put system MovementSpeedRatio 0.8
+settings put system accuracy.control 100
+settings put system view_scroll_friction 10
+} > /dev/null 2>&1
+}
+
+touch_props() {
+{
+setprop debug.sf.latch_unsignaled 1
+setprop debug.sf.disable_backpressure 1
+setprop debug.sf.multithreaded_present true
+setprop debug.sf.luma_sampling 0
+setprop debug.sf.disable_client_composition_cache 1
+setprop debug.sf.disable_backpressure 1
+setprop debug.sf.enable_gl_backpressure 0
+setprop debug.sf.enable_layer_caching 0
+setprop debug.sf.disable_client_composition_cache 1 
+setprop debug.sf.enable_gl_backpressure false
+setprop debug.sf.enable_hwc_vds 0
+setprop debug.sf.hw 0
+setprop debug.sf.predict_hwc_composition_strategy 0
+setprop debug.sf.use_phase_offsets_as_durations 1
+setprop debug.sf.use_phase_offsets_as_durations 1
+setprop debug.sf.late.sf.duration 10500000
+setprop debug.sf.late.app.duration 16600000
+setprop debug.sf.treat_170m_as_sRGB 1
+setprop debug.sf.earlyGl.app.duration 16600000
+setprop debug.sf.frame_rate_multiple_threshold 120
+setprop debug.boot.fps 20
+setprop debug.performance.tuning 1
+setprop debug.hwui.render_dirty_regions false
+setprop debug.hwui.disable_vsync true
+setprop debug.sf.set_touch_timer_ms 100
+setprop debug.MultitouchSettleInterval 0.01ms
+setprop debug.MultitouchMinDistance 0.01px
+setprop debug.TapInterval 0.1ms
+setprop debug.touch.pressure.scale 0.001
+setprop debug.touch_move_opt 1
+setprop debug.touch_vsync_opt 1
+setprop debug.touch.size.bias 0 
+setprop debug.TapSlop1px
+setprop debug.security.mdpp none
+setprop debug.security.mdpp.result none
+setprop debug.service.lgospd.enable 0
+setprop debug.service.pcsync.enable 0
+setprop debug.touch.deviceTypetouchScreen
+setprop debug.boosterorientnosync 1
+setprop debug.touch.deviceType touchScreen
+setprop debug.performance.tuning 1
+setprop debug.egl.swapinterval 90
+} > /dev/null 2>&1
+}
+
+touch_commands() {
+{
+input gamepad swipe 200 500 600 500 30
+input touchpad swipe 200 500 300 500 70
+input touchscreen swipe 100 100 500 500 150
+input swipe 500 1000 900 1000 30
+input gamepad tap 250 450
+input touchpad tap 350 650
+input touchscreen tap 130 180
+input tap 750 1150
+cmd device_config put input default_key_press_repeat_rate 33
+cmd device_config put input filtered_accel_event_rate_hz 240
+cmd device_config put input touch_screen_sample_interval_ms 8
+cmd device_config put systemui cg_frame_interval_millis 4
+cmd device_config put systemui low_power_refresh_rate_millis 0
+cmd device_config put systemui low_power_refresh_rate_millis 0
+cmd device_config put systemui cg_max_frame_skip 8
+} > /dev/null 2>&1
+}
+
+rmv_touch_function() {
+{
+#touch_global
+settings delete global touch_sampling_rate 240
+settings delete global input.sampling_rate 1000
+settings put global window_animation_scale 1
+settings put global transition_animation_scale 1
+settings put global animator_duration_scale 1
+settings delete global touch_sampling_rate 240
+settings delete global input.sampling_rate 1000
+settings delete global input.delay 0
+settings delete global input.resampling 1
+settings delete global input.gesture_prediction 0
+settings delete global input.touch_boost 1
+settings delete global min.touch.major 0
+settings delete global min.touch.minor 0
+settings delete global surface_flinger.set_idle_timer_ms 0
+settings delete global surface_flinger.set_touch_timer_ms 0
+settings delete global surface_flinger.set_display_power_timer_ms 0
+settings delete global touch.pressure.scale 0.1
+settings delete global touch.size.scale 0.1
+settings delete global settings_enable_monitor_phantom_procs false
+settings delete global surface_flinger.start_graphics_allocator_service true
+settings delete global surface_flinger.running_without_sync_framework true
+settings delete global surface_flinger.use_context_priority 1
+settings delete global tactile_feedback_enabled 1
+settings delete global windowsmgr.support_low_latency_touch true
+settings delete global fw.bservice_enable true
+settings delete global fw.bg_apps_limit 4
+settings delete global fw.bservice_limit 4
+settings delete global fw.bservice_age 10000
+settings delete global windowsmgr.max_events_per_sec 180
+settings delete global min_pointer_dur 8
+settings delete global product.multi_touch_enabled true
+settings delete global securestorage.knox false
+settings delete global maximum_obscuring_opacity_for_touch 0.5
+settings delete global DragMinSwitchSpeed 99999.0px/s
+settings delete global SwipeMaxWidthRatio 1
+settings delete global KeyRepeatDelay 0
+settings delete global KeyRepeatTimeout 0
+settings delete global LOSS_OF_FOCUS_BY_MOUSE_MOVEMENT DISABLED
+settings delete global MOUSEX_AIM_LEVEL 95%
+settings delete global sf.disable_smooth_effect true
+
+#touch_secure
+settings delete secure pointer_speed 10
+settings delete secure display_density_forced 520
+settings delete secure touch_distance_scale 0
+settings delete secure view_scroll_friction 0
+settings delete secure multi_touch_enabled 1
+settings delete secure assist_touch_gesture_enabled 0
+settings delete secure long_press_timeout 300
+settings delete secure multi_press_timeout 300
+settings delete secure touch_size_scale 5
+settings delete secure show_rotation_suggestions 0
+settings delete secure touch_size_bias 5
+settings delete secure touch_exploration_enabled 1
+settings delete secure touch_orientationAware 1
+settings delete secure touch_pressure_scale 0.00000125
+settings delete secure dev.pm.dyn_samplingrate 1
+settings delete secure multi_press_timeout 300
+
+#touch_system
+settings delete system tap_duration 20
+settings delete system view.scroll_friction 3
+settings delete system persist.sys.touch.sampling_boost 1
+settings delete system touch.boost true
+settings delete system touch.responsive 1
+settings delete system devices_virtual_input_input1_polling_rate 240
+settings delete system persist.sys.touch.sampling_boost 1
+settings delete system pointer_speed 5
+settings delete system touch.boost true
+settings delete system touch.responsive 1
+settings delete system touch_sampling_rate 120
+settings delete system touch_size_calibration geometric
+settings delete system touch_stats {"min":1,"max":1}
+settings delete system touchX_debuggable 1
+settings delete system touch_boost_threshold 5
+settings delete system touch_feature_gamemode_enable 1
+settings delete system touch_input_sensitivity 1
+settings delete system touch_rate_control 0
+settings delete system touch_response_rate 1
+settings delete system touch_sampling_rate_override 1
+settings delete system touch_sensitivity 1_2
+settings delete system touch_slop 8
+settings delete system touch_switch_set_touchscreen 14005
+settings delete system touch_tap_sensitivity 1
+settings delete system touchpanel_game_switch_enable 1
+settings delete system haptic_feedback_intensity 50
+settings delete system af.resampler.quality 255
+settings delete system scrollingcache 3
+settings delete system service.touch.tpf 30
+settings delete system lowThreshold 0
+settings delete system highThreshold 0
+settings delete system VirtualKeyQuietTime 0
+settings delete system KeyRepeatDelay 0
+settings delete system KeyRepeatTimeout 0
+settings delete system show_touches 0
+settings delete system vsync.disable.fps.limit 1
+settings delete system table.framerate 120
+settings delete system disable.hwc.delay 1
+settings delete system Touc_xRotation  360
+settings delete system touchswipedeadzone 5
+settings delete system touchscreen_hovering 0
+settings delete system touchscreen_sensitivity_mode 3
+settings delete system touchscreen_pressure_calibration 1023
+settings delete system touchscreen_threshold 9
+settings delete system touchfeature.gamemode.enable true
+settings delete system r.setframepace 120
+settings delete system touch_switch_set_touchscreen 14005
+settings delete system touchpanel_game_switch_enable 1
+settings delete system touchpanel_oppo_tp_direction 1
+settings delete system touchpanel_oppo_tp_limit_enable 0
+settings delete system touchpanel_oplus_tp_limit_enable 0
+settings delete system touchpanel_oplus_tp_direction 1
+settings delete system use_dithering 0
+settings delete system use_dithering false
+settings delete system qti.inputopts.enable true
+settings delete system qti.inputopts.movetouchslop 0.1
+settings delete system MovementSpeedRatio 1
+settings delete system ZoomSpeedRatio 1
+settings delete system SwipeTransitionAngleCosine 3.6
+settings delete system mot.proximity.distance 1
+settings delete system PointerVelocityControlParameters 1
+settings delete system device.internal 1
+settings delete system touchscreen_sensitivity 10
+settings delete system touchscreen_min_press_time 50
+settings delete system touchscreen_hevoring 0
+settings delete system touchscreen_gesture_mode 1
+settings delete system touchscreen_sensitivity_threshold 9
+settings delete system touchscreen_double_tap_speed 75
+settings delete system touchscreen_sensitivity_scale 1.5
+settings delete system qti.inputopts.enable true
+settings delete system qti.inputopts.movetouchslop 0.6
+settings delete system touch.orientationAware 1
+settings delete system SurfaceOrientation auto
+settings delete system touch.size.calibration geometric
+settings delete system touch.size.isSummed 1
+settings delete system touch.orientation.calibration auto
+settings delete system touch.distance.scale auto
+settings delete system touch.coverage.calibration octagram
+settings delete system touch.gesturemode spots
+settings delete system MovementSpeedRatio auto
+settings delete system pm.dyn_samplingrate 9999999999999999999999999999
+settings delete system touch.pressure.calibration auto
+settings delete system scroll.accelerated.hw true
+settings delete system ui.hwframes 9999999999999999999999999999
+settings delete system force_high_end_gfx 1
+settings delete system sf.disable_smooth_effect true
+settings delete system max_num_touch auto
+settings delete system maxeventspersec 9999999999999999999999999999
+settings delete system resampler.quality 255
+settings delete system touch.sampling rate 720
+settings delete system adaptive_touch_sensitivity speed
+settings delete system touch.orientationAware 0
+settings delete system PressureForID 0.01
+settings delete system QuietInterval 0.1ms
+settings delete system MultitouchMinDistance 1px
+settings delete system AIM_SENSITIVITY_TRANSITION_TIME GRADUAL
+settings delete system APP_SWITCH_DELAY_TIME false
+settings delete system AbsoluteXForID SpeedForID
+settings delete system AccelerationX true
+settings delete system AccelerationY true
+settings delete system DoubleTouch OEM
+settings delete system PowerbuttonTapping 0
+settings delete system touch.assistant.enabled 0
+settings delete system type.touch_speed true
+settings delete system MovementSpeedRatio 0.8
+settings delete system accuracy.control 100
+settings delete system view_scroll_friction 10
+} > /dev/null 2>&1
+}
+
+rmv_touch_commands() {
+{
+input gamepad swipe 200 500 600 500 30
+input touchpad swipe 200 500 300 500 70
+input touchscreen swipe 100 100 500 500 150
+input swipe 500 1000 900 1000 30
+input gamepad tap 250 450
+input touchpad tap 350 650
+input touchscreen tap 130 180
+input tap 750 1150
+cmd device_config delete input default_key_press_repeat_rate 33
+cmd device_config delete input filtered_accel_event_rate_hz 240
+cmd device_config delete input touch_screen_sample_interval_ms 8
+cmd device_config delete systemui cg_frame_interval_millis 4
+cmd device_config delete systemui low_power_refresh_rate_millis 0
+cmd device_config delete systemui low_power_refresh_rate_millis 0
+cmd device_config delete systemui cg_max_frame_skip 8
+} > /dev/null 2>&1
+}
+
+Reboot() {
+reboot > /dev/null 2>&1
+}
