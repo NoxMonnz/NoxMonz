@@ -65,7 +65,6 @@ settings put global sf.disable_smooth_effect true
 
 #touch_secure
 settings put secure pointer_speed 10
-settings put secure display_density_forced 520
 settings put secure touch_distance_scale 0
 settings put secure view_scroll_friction 0
 settings put secure multi_touch_enabled 1
@@ -305,7 +304,6 @@ settings delete global sf.disable_smooth_effect true
 
 #touch_secure
 settings delete secure pointer_speed 10
-settings delete secure display_density_forced 520
 settings delete secure touch_distance_scale 0
 settings delete secure view_scroll_friction 0
 settings delete secure multi_touch_enabled 1
