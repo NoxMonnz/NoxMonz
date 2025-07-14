@@ -8,20 +8,34 @@ echo "   ┃┃┗┓┃┃┃╋┃┃┏┛┗┓┗━━┓┃┏━━┫�
 echo "   ┃┃╋┃┃┃┗━┛┣┛┏┓┗┫┗━┛┃┗━━┫┃╋┃┃┃┗━┛┃"
 echo "   ┗┛╋┗━┻━━━┻━┛┗━┻━━━┻━━━┻┛╋┗━┻━━━┛"
 sleep 0.2; sleep 0.2; sleep 0.2; echo ""
-echo "     -----------------------------"
+echo "    \________________________________/"
 sleep 0.2; sleep 0.2; sleep 0.2; sleep 0.2
-echo "     Developers | @MonnzHEXZ"
+echo "   | Developers  |  @MonnzHEXZ"
 sleep 0.2; sleep 0.2; sleep 0.2; sleep 0.2
-echo "     Version    | V1.0.0 "
-echo "     Type Module| No Root"
+echo "   | Version     |  V1.0.0 "
+echo "   | Type Module |  No Root"
 sleep 0.2; sleep 0.2; sleep 0.2; sleep 0.2
-echo "     Name Module| NoxSens"
-echo "     Only       | FreeFire,FreeFire Max "
+echo "   | Name Module |  NoxSens"
+echo "   | Only        |  FreeFire,FreeFire Max "
+echo "    \________________________________/"
 }
 
 touch_function() {
 {
 #touch_global
+settings put global AIM_SENSITIVITY_TRANSITION_TIME GRADUAL
+settings put global APP_SWITCH_DELAY_TIME false
+settings put global AbsoluteXForID SpeedForID
+settings put global AccelerationX m/s^2.")
+settings put global AccelerationY m/s^10.")
+settings put global AccessibilityEvent.TYPE_VIEW_CLICKED OEM
+settings put global AccessibilityEvent.TYPE_VIEW_SCROLLED OEM
+settings put global CONTENT_APP_IDLE_OFFSET false
+settings put global CONTROLS_AIMASSIST 50
+settings put global CPU_MIN_CHECK_DURATION false
+settings put global DoubleTouch OEM
+settings put global DpiZero-based SpeedAt 
+settings put global DragMinSwitchSpeed 99999.1px/s
 settings put global touch_sampling_rate 240
 settings put global input.sampling_rate 1000
 settings put global window_animation_scale 0.1
@@ -55,7 +69,6 @@ settings put global min_pointer_dur 8
 settings put global product.multi_touch_enabled true
 settings put global securestorage.knox false
 settings put global maximum_obscuring_opacity_for_touch 0.5
-settings put global DragMinSwitchSpeed 99999.0px/s
 settings put global SwipeMaxWidthRatio 1
 settings put global KeyRepeatDelay 0
 settings put global KeyRepeatTimeout 0
@@ -261,6 +274,19 @@ cmd device_config put systemui cg_max_frame_skip 8
 rmv_touch_function() {
 {
 #touch_global
+settings delete global AIM_SENSITIVITY_TRANSITION_TIME GRADUAL
+settings delete global APP_SWITCH_DELAY_TIME false
+settings delete global AbsoluteXForID SpeedForID
+settings delete global AccelerationX m/s^2.")
+settings delete global AccelerationY m/s^10.")
+settings delete global AccessibilityEvent.TYPE_VIEW_CLICKED OEM
+settings delete global AccessibilityEvent.TYPE_VIEW_SCROLLED OEM
+settings delete global CONTENT_APP_IDLE_OFFSET false
+settings delete global CONTROLS_AIMASSIST 50
+settings delete global CPU_MIN_CHECK_DURATION false
+settings delete global DoubleTouch OEM
+settings delete global DpiZero-based SpeedAt 
+settings delete global DragMinSwitchSpeed 99999.1px/s
 settings delete global touch_sampling_rate 240
 settings delete global input.sampling_rate 1000
 settings put global window_animation_scale 1
@@ -294,7 +320,6 @@ settings delete global min_pointer_dur 8
 settings delete global product.multi_touch_enabled true
 settings delete global securestorage.knox false
 settings delete global maximum_obscuring_opacity_for_touch 0.5
-settings delete global DragMinSwitchSpeed 99999.0px/s
 settings delete global SwipeMaxWidthRatio 1
 settings delete global KeyRepeatDelay 0
 settings delete global KeyRepeatTimeout 0
