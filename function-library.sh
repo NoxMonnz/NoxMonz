@@ -470,43 +470,27 @@ sed -i '/^$/d' "$magic_games"
 
 
 
-moddifier() {
-# Tentukan direktori target
-DIR_FILE="/data/local/tmp"
-
-# Tentukan nama file
-NAME_FILE="Scan"
-
-# Konten file akan diambil dari argumen pertama ($1)
-FILE_CONTENT="$1"
+Moddifier() {
+VALUE_TO_SET="$1"
 
 # --- Validasi Argumen ---
-# Pastikan ada argumen yang diberikan
-if [ -z "$FILE_CONTENT" ]; then
-    echo "ERROR: Tidak ada konten yang diberikan untuk file."
-    echo "Penggunaan: <nama_skrip_ini> <konten_yang_diinginkan>"
+if [ -z "$VALUE_TO_SET" ]; then
+    echo "ERROR: Tidak ada nilai yang diberikan untuk pengaturan global."
+    echo "Penggunaan: <nama_skrip_ini> <nilai_yang_diinginkan>"
     return 1 # Keluar dengan kode error
 fi
 
-# --- Pastikan Direktori Ada ---
-# Buat direktori jika belum ada. Opsi -p mencegah error jika direktori sudah ada.
-mkdir -p "$DIR_FILE"
+# --- Mengirim Nilai ke Pengaturan Global ---
+settings put global scan_game_noxxbpro "$VALUE_TO_SET"
 
-# --- Buat Jalur File Lengkap ---
-FULL_FILE_PATH="$DIR_FILE/$NAME_FILE"
+# --- Memeriksa Efek dari tweak ---
+CURRENT_GLOBAL_VALUE=$(settings get global scan_game_noxxbpro)
 
-# --- Tulis Konten ke File ---
-# Menggunakan 'echo' dan 'redirect' (>) untuk menulis konten ke file.
-# Jika file sudah ada, isinya akan ditimpa.
-echo "$FILE_CONTENT" > "$FULL_FILE_PATH"
-
-# --- Verifikasi Pembuatan File ---
-# Periksa apakah file benar-benar ada dan isinya sesuai
-if [ -f "$FULL_FILE_PATH" ] && [ "$(cat "$FULL_FILE_PATH")" = "$FILE_CONTENT" ]; then
-    return 0 # Keluar dengan kode sukses
+if [ "$CURRENT_GLOBAL_VALUE" = "$VALUE_TO_SET" ]; then
+    return 0
 else
-    echo "ERROR: Failed to create or verify file '$FULL_FILE_PATH'."
-    exit 1
+    echo "-  ERROR: Tweak not found, Please write the game package name correctly "
+    return 1 # Keluar dengan kode error
 fi
 }
 
