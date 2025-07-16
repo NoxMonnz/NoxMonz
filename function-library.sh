@@ -470,7 +470,7 @@ sed -i '/^$/d' "$magic_games"
 
 
 
-Moddifier() {
+moddifier() {
 VALUE_TO_SET="$1"
 
 # --- Validasi Argumen ---
