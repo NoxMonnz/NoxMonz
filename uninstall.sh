@@ -35,6 +35,7 @@ sleep 0.2 && moddifier "$1"
 sleep 0.2 && echo_design1
 sleep 0.2 && echo_design
 echo "-]÷————————————< Uninstalling >—————————————————— "
+echo " "
 sleep 2
 echo "-  Removed Shell Script..."
 sleep 2
