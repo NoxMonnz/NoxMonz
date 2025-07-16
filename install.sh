@@ -1,8 +1,5 @@
 #!/system/bin/sh
 
-# Mulai ulang file
-rm -rf /data/local/tmp/*
-
 # Menambahkan direktori khusus
 mkdir -p /data/local/tmp/sysui
 
