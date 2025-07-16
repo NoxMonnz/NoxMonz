@@ -56,17 +56,20 @@ sleep 0.2 && removed_soc_optimize
 sleep 0.2 && enable_gms
 echo "-  Success Removed "
 echo " "
-echo "-]÷————————————————< Reboot >——————————————————— "
-sleep 4
 
 Removed="$2"
 
 case "$Removed" in
   -A)
+    echo "-]÷————————————————< Reboot >——————————————————— "
+    sleep 4
     sleep 0.2 && Reboot
     ;;
   *)
-    # Not Found
+    echo "-]÷—————————————————< Done >———————————————————— "
     exit 1
     ;;
 esac
+
+
+
