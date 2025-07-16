@@ -259,7 +259,7 @@ GMS() {
 
 Launcher_game() {
    sleep 1
-for game in $(cat /data/local/tmp/Scan | cut -f 2 -d ":"); do
+for game in $(settings get global scan_noxxbpro | cut -f 2 -d ":"); do
              am start --activity-no-animation -n $(cmd package dump $game | awk '/MAIN/{getline; print $2}' | head -n 1)
 done    
 }
