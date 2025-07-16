@@ -30,6 +30,8 @@ source "/data/local/tmp/sysui/function-library2.sh"
 source "/data/local/tmp/sysui/design.sh"
 
 # Memulai Module NoxXB - PRO dengan function
+echo "-]÷——————————————< Installing >————————————————— "
+echo " "
 sleep 0.2 && Detected_Game
 sleep 0.2 && moddifier "$1"
 sleep 0.2 && Checking_file
@@ -51,3 +53,5 @@ sleep 0.2 && GarbageCleaner
 sleep 0.2 && Trash
 sleep 0.2 && system_read_function "$1"
 sleep 0.2 && Launcher_game
+echo " "
+echo "-]÷—————————————————< Done >———————————————————— "
