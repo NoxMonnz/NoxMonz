@@ -48,9 +48,9 @@ if [ "$checked" = "true" ]; then
   setprop debug.hwui.renderer "$ENGINE_VALUE"
   setprop debug.renderengine.beckend  "$BECKEND_VALUE"
   } > /dev/null 2>&1
-  echo " Engine: $ENGINE_VALUE"
+  echo "-  Engine: $ENGINE_VALUE"
   sleep 1
-  echo " Beckend: $BECKEND_VALUE "
+  echo "-  Beckend: $BECKEND_VALUE "
 else
   echo " Your Phone Not Supported Vulkan API!"
   sleep 0.5
@@ -66,9 +66,9 @@ sleep 1
 # Scale Detect
 # Perbaikan: Menggunakan "$SCALE_VALUE"
 if [ -n "$SCALE_VALUE" ]; then
-    echo " Animation Scale: $SCALE_VALUE"
+    echo "-  Animation Scale: $SCALE_VALUE"
 else
-    echo " Animation Scale: Not Detected/Applied"
+    echo "-  Animation Scale: Not Detected/Applied"
 fi
   
 sleep 1
@@ -76,9 +76,9 @@ sleep 1
 # Fps Detect
 # Perbaikan: Menggunakan "$FPS_VALUE"
 if [ -n "$FPS_VALUE" ]; then
-    echo " Frame Per Seconds: $FPS_VALUE"
+    echo "-  Frame Per Seconds: $FPS_VALUE"
 else
-    echo " Frame Per Seconds: Not Detected/Applied"
+    echo "-  Frame Per Seconds: Not Detected/Applied"
 fi
   
 sleep 1
@@ -91,11 +91,11 @@ output=$(cmd game 2>&1)
 # Periksa apakah output menunjukkan dukungan Game Manager
 if echo "$output" | grep -q "Game manager (game) commands:"; then 
     cmd game downscale $DWNS_VALUE $GAME > /dev/null 2>&1
-    echo " Downscale: $DWNS_VALUE ( $GAME )"
+    echo "-  Downscale: $DWNS_VALUE ( $GAME )"
 elif echo "$output" | grep -q "cmd: Can't find service: game"; then
-    echo "Your Phone Does Not Support Game Manager"
+    echo "-  Your Phone Does Not Support Game Manager"
 else
-    echo "Could not determine Game Manager support. Unexpected output from 'cmd game'."
+    echo "-  Could not determine Game Manager support. Unexpected output from 'cmd game'."
 fi
 
  
