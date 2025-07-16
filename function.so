@@ -18,8 +18,8 @@ echo "-  Type Module |  No Root"
 sleep 0.2; sleep 0.2; sleep 0.2; sleep 0.2
 echo "-  Name Module |  NoxSens"
 echo "-  Only        |  FreeFire,FreeFire Max "
-echo "    \________________________________/"
-}
+echo " "
+echo "-]÷—————————————————< Done >———————————————————— "
 
 touch_function() {
 {
