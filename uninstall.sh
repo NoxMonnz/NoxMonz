@@ -55,7 +55,7 @@ sleep 0.2 && Trash
 sleep 0.2 && removed_soc_optimize
 sleep 0.2 && enable_gms
 echo "-  Success Removed "
-echo ""
+echo " "
 echo "-]÷————————————————< Reboot >——————————————————— "
 sleep 4
 
