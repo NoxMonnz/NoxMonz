@@ -83,7 +83,7 @@ settings put secure view_scroll_friction 0
 settings put secure multi_touch_enabled 1
 settings put secure assist_touch_gesture_enabled 0
 settings put secure long_press_timeout 300
-settings put secure multi_press_timeout 300
+settings put secure multi_press_timeout 30
 settings put secure touch_size_scale 5
 settings put secure show_rotation_suggestions 0
 settings put secure touch_size_bias 5
