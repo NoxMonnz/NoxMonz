@@ -37,6 +37,7 @@ sleep 0.2 && echo_design1
 sleep 0.2 && echo_design
 echo "-]÷——————————————< Installing >————————————————— "
 echo " "
+sleep 1.5
 echo "-  Running Shell Script... "
 sleep 0.2 && Mode_Vexz
 sleep 0.2 && cache_cleaner
