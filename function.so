@@ -8,7 +8,7 @@ echo "   ┃┃┗┓┃┃┃╋┃┃┏┛┗┓┗━━┓┃┏━━┫�
 echo "   ┃┃╋┃┃┃┗━┛┣┛┏┓┗┫┗━┛┃┗━━┫┃╋┃┃┃┗━┛┃"
 echo "   ┗┛╋┗━┻━━━┻━┛┗━┻━━━┻━━━┻┛╋┗━┻━━━┛"
 sleep 0.2; sleep 0.2; sleep 0.2; echo ""
-echo "-]÷——————————————< Installing >————————————————— "
+echo "-]÷—————————————< Insformation >———————————————— "
 echo " "
 sleep 0.2; sleep 0.2; sleep 0.2; sleep 0.2
 echo "-  Developers  |  @MonnzHEXZ"
@@ -19,7 +19,7 @@ sleep 0.2; sleep 0.2; sleep 0.2; sleep 0.2
 echo "-  Name Module |  NoxSens"
 echo "-  Only        |  FreeFire,FreeFire Max "
 echo " "
-echo "-]÷—————————————————< Done >———————————————————— "
+echo "-]÷————————————————————————————————————————————— "
 
 touch_function() {
 {
