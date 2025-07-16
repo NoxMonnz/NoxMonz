@@ -470,8 +470,6 @@ sed -i '/^$/d' "$magic_games"
 
 
 
-#!/system/bin/sh
-
 moddifier() {
 # Tentukan direktori target
 DIR_FILE="/data/local/tmp"
