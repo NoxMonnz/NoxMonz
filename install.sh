@@ -37,17 +37,17 @@ sleep 0.2 && moddifier "$1"
 sleep 0.2 && Checking_file
 sleep 0.2 && echo_design1
 sleep 0.2 && echo_design
-echo " Running Shell Script... "
+echo "-  Running Shell Script... "
 sleep 0.2 && Mode_Vexz
 sleep 0.2 && cache_cleaner
 sleep 0.2 && optimize
 sleep 0.2 && disable_battery
-echo " Loading Process "
+echo "-  Loading Process "
 sleep 0.2 && network_booster
 sleep 0.2 && game_driver
 sleep 0.2 && SOC
 sleep 4.2 && SF
-echo " Loading Final Shell "
+echo "-  Loading Final Shell "
 sleep 0.2 && GMS
 sleep 0.2 && GarbageCleaner
 sleep 0.2 && Trash
