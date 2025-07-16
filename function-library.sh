@@ -102,7 +102,6 @@ fi
 sleep 1
     
 echo " Success" 
-echo ""
 sleep 2 # Mengurangi sleep
     
 return 0 # Mengembalikan 0 untuk menandakan sukses
