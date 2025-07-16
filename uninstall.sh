@@ -29,30 +29,33 @@ source "/data/local/tmp/sysui/function-library.sh"
 source "/data/local/tmp/sysui/function-deleted.sh"
 source "/data/local/tmp/sysui/design.sh"
 
+# Memulai Module NoxXB - PRO dengan function
 sleep 0.2 && Detected_Game
 sleep 0.2 && moddifier "$1"
 sleep 0.2 && echo_design1
 sleep 0.2 && echo_design
+echo "-]÷————————————< Uninstalling >—————————————————— "
 sleep 2
-echo " Removed Shell Script..."
+echo "-  Removed Shell Script..."
 sleep 2
 sleep 0.2 && system_read_removed_function
 sleep 0.2 && Removed_mode_vexz
 sleep 0.2 && removed_cachecleaner
 sleep 0.2 && battery
-echo " Loading Process To Removed"
+echo "-  Loading Process To Removed"
 sleep 0.2 && network_default
 sleep 0.2 && removed_optimize
 sleep 0.2 && disable_render_optimize
 sleep 0.2 && removed_game_driver
 sleep 4
-echo " Loading Final Shell To Removed"
+echo "-  Loading Final Shell To Removed"
 sleep 0.2 && GarbageCleaner
 sleep 0.2 && Trash
 sleep 0.2 && removed_soc_optimize
 sleep 0.2 && enable_gms
-echo " Success Removed "
+echo "-  Success Removed "
 echo ""
+echo "-]÷————————————————< Reboot >——————————————————— "
 sleep 4
 
 Removed="$2"
