@@ -2,16 +2,16 @@ system_read_removed_function() {
 sleep 1
 GAME=$(settings get global scan_game_noxxbpro)
 {
-             setprop debug.hwui.renderer opengl
-             setprop debug.renderengine.beckend opengl
-             settings put system peak_refresh_rate 60
-             settings put system min_refresh_rate 60
-             settings put system max_refresh_rate 60
-             settings put system user_refresh_rate 60
-             cmd game downscale disable "$GAME"
-             settings put global window_animation_scale 1
-             settings put global transition_animation_scale 1
-             settings put global animator_duration_scale 1
+setprop debug.hwui.renderer opengl
+setprop debug.renderengine.beckend opengl
+settings put system peak_refresh_rate 60
+settings put system min_refresh_rate 60
+settings put system max_refresh_rate 60
+settings put system user_refresh_rate 60
+cmd game downscale disable "$GAME"
+settings put global window_animation_scale 1
+settings put global transition_animation_scale 1
+settings put global animator_duration_scale 1
 } > /dev/null 2>&1                    
 }
 
