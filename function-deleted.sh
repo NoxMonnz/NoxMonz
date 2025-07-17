@@ -17,8 +17,8 @@ settings put global animator_duration_scale 1
 
 
 
+# BY @SukitooV1
 GarbageCleaner() {
-# By Sukitooo, Thanks Sukitoo
 (for a in $(find /sdcard/ -name .thumbnails;find /sdcard/ -name *.log);do rm -rf $a;done;pm trim-caches 999G)>/dev/null 2>&1&
 (rm -rf /data/data/*/cache;rm -rf /sdcard/Android/data/*/cache)>/dev/null 2>&1&
 for log in $(getprop | grep -E 'log|Log|LOG' | cut -f 2 -d [ | cut -f 1 -d ]); do
@@ -28,8 +28,8 @@ done > /dev/null 2>&1
 
 
 
+# BY SukitooV1
 Trash() {
-# By Sukitoo, Thanks Sukitoo
 pkill -f com.whatsapp>/dev/null 2>&1
 rm -rf /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/{.Shared,.StickerThumbs,.Thumbs,.trash,Backups,Databases,Media/{.Links,.Statuses,WallPaper,"WhatsApp Animated Gifs","WhatsApp Profile Photos","WhatsApp Audio","WhatsApp Documents/Sent","WhatsApp Images/Sent","WhatsApp Video/Sent","WhatsApp Voice Notes"}}
 rm -rf /storage/emulated/0/Android/data/com.whatsapp
