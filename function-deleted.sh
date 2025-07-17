@@ -169,7 +169,8 @@ soc=$(getprop ro.soc.manufacturer)
 
 
 
-network_default() { by kazuyoo, thanks kazuyoo
+# BY @Kzyoo
+network_default() {
 {
 settings delete global download_manager_recommended_max_bytes_over_mobile
 settings delete global download_manager_max_bytes_over_mobile
