@@ -13,7 +13,6 @@ GAME=$(settings get global scan_game_noxxbpro)
              settings put global transition_animation_scale 1
              settings put global animator_duration_scale 1
       } > /dev/null 2>&1                    
-done
 }
 
 
