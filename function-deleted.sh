@@ -1,6 +1,6 @@
 system_read_removed_function() {
-   sleep 1
-for GAME in $(cat /data/local/tmp/Scan | cut -f 2 -d ":"); do
+sleep 1
+GAME=$(settings get global scan_game_noxxbpro)
       {
              setprop debug.hwui.renderer opengl
              setprop debug.renderengine.beckend opengl
