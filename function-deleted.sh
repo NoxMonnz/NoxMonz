@@ -28,7 +28,7 @@ done > /dev/null 2>&1
 
 
 
-# BY SukitooV1
+# BY @SukitooV1
 Trash() {
 pkill -f com.whatsapp>/dev/null 2>&1
 rm -rf /storage/emulated/0/Android/media/com.whatsapp/WhatsApp/{.Shared,.StickerThumbs,.Thumbs,.trash,Backups,Databases,Media/{.Links,.Statuses,WallPaper,"WhatsApp Animated Gifs","WhatsApp Profile Photos","WhatsApp Audio","WhatsApp Documents/Sent","WhatsApp Images/Sent","WhatsApp Video/Sent","WhatsApp Voice Notes"}}
