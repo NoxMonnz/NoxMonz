@@ -13,10 +13,7 @@ echo "-  Module Name    =   NoxXB - PRO "
 sleep 1
 echo "-  Module Proper  =   Connected "
 echo " "
-sleep 1
-echo "-]÷————————————————————————————————————————————— "
-echo " "
-sleep 2
+sleep 3v
 }
 
 
