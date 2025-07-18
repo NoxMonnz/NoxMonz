@@ -212,34 +212,59 @@ Soc_optimizer() {
 
 SF() {
 refresh_rate=$(dumpsys display | grep -oE 'fps=[0-9]+' | awk -F '=' '{print $2}' | head -n 1)
-early_offset=$((refresh_rate / 5))
-late_offset=$((refresh_rate * 5 / 6))
-negative_offset=$((early_offset * -1))
-gl_duration=$((late_offset + frame_time / 15))
-idle_timer=$((refresh_rate / 1000000 + 800))
-sampling_duration=$((refresh_rate * 4 / 5))
-sampling_period=$((refresh_rate * 9 / 10))
-  
- {
-   setprop debug.sf.hwc.min.duration "$refresh_rate"
-   setprop debug.sf.early.app.duration "$early_offset"
-   setprop debug.sf.late.app.duration "$late_offset"
-   setprop debug.sf.early.sf.duration "$early_offset"
-   setprop debug.sf.late.sf.duration "$late_offset"
-   setprop debug.sf.set_idle_timer_ms "$idle_timer"
-   setprop debug.sf.earlyGl.sf.duration "$gl_duration"
-   setprop debug.sf.earlyGl.app.duration "$gl_duration"
-   setprop debug.sf.early_phase_offset_ns "$early_offset"
-   setprop debug.sf.early_gl_phase_offset_ns "$early_offset"
-   setprop debug.sf.early_app_phase_offset_ns "$early_offset"
-   setprop debug.sf.early_gl_app_phase_offset_ns "$early_offset"
-   setprop debug.sf.high_fps_early_app_phase_offset_ns "$negative_offset"
-   setprop debug.sf.high_fps_late_app_phase_offset_ns "$late_offset"
-   setprop debug.sf.high_fps_early_sf_phase_offset_ns "$negative_offset"
-   setprop debug.sf.high_fps_late_sf_phase_offset_ns "$late_offset"
-   setprop debug.sf.high_fps_early_gl_phase_offset_ns "$early_offset"
-   setprop debug.sf.high_fps_early_gl_app_phase_offset_ns "$early_offset"
- } > /dev/null 2>&1  
+
+if [[ "$refresh_rate" == "60" ]]; then
+   {
+   dumpsys SurfaceFlinger --timestats -clear -disable
+   setprop debug.sf.late.sf.duration 1666666
+   setprop debug.sf.late.app.duration 1666666
+   setprop debug.sf.early.sf.duration 1666666
+   setprop debug.sf.early.app.duration 1666666
+   setprop debug.sf.earlyGl.sf.duration 1666666
+   setprop debug.sf.earlyGl.app.duration 1666666
+   setprop debug.sf.hwc.min.duration 1666666
+   setprop debug.vsync_event_phase_offset_ns 1666666
+   setprop debug.vsync_sf_event_phase_offset_ns 1666666
+   setprop debug.sf.phase_offset_threshold_for_next_vsync_ns 1666666
+   setprop debug.sf.latch_unsignaled false
+   setprop debug.sf.disable_backpressure 1
+   setprop debug.sf.use_phase_offsets_as_durations 1666666
+   } > /dev/null 2>&1
+elif [[ "$refresh_rate" == "90" ]]; then
+   {
+   dumpsys SurfaceFlinger --timestats -clear -disable
+   setprop debug.sf.late.sf.duration 11111111
+   setprop debug.sf.late.app.duration 11111111
+   setprop debug.sf.early.sf.duration 11111111
+   setprop debug.sf.early.app.duration 11111111
+   setprop debug.sf.earlyGl.sf.duration 11111111
+   setprop debug.sf.earlyGl.app.duration 11111111
+   setprop debug.sf.hwc.min.duration 11111111
+   setprop debug.vsync_event_phase_offset_ns 11111111
+   setprop debug.vsync_sf_event_phase_offset_ns 11111111
+   setprop debug.sf.phase_offset_threshold_for_next_vsync_ns 11111111
+   setprop debug.sf.latch_unsignaled false
+   setprop debug.sf.disable_backpressure 1
+   setprop debug.sf.use_phase_offsets_as_durations 11111111
+   } > /dev/null 2>&1   
+elif [[ "$refresh_rate" == "120" ]]; then
+   {
+   dumpsys SurfaceFlinger --timestats -clear -disable
+   setprop debug.sf.late.sf.duration 8333333
+   setprop debug.sf.late.app.duration 8333333
+   setprop debug.sf.early.sf.duration 8333333
+   setprop debug.sf.early.app.duration 8333333
+   setprop debug.sf.earlyGl.sf.duration 8333333
+   setprop debug.sf.earlyGl.app.duration 8333333
+   setprop debug.sf.hwc.min.duration 8333333
+   setprop debug.vsync_event_phase_offset_ns 8333333
+   setprop debug.vsync_sf_event_phase_offset_ns 8333333
+   setprop debug.sf.phase_offset_threshold_for_next_vsync_ns 8333333
+   setprop debug.sf.latch_unsignaled false
+   setprop debug.sf.disable_backpressure 1
+   setprop debug.sf.use_phase_offsets_as_durations 8333333
+   } > /dev/null 2>&1   
+fi   
 }
 
 
