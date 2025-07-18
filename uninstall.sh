@@ -1,13 +1,5 @@
 #!/system/bin/sh
 
-# Checking Internet
-if ping -c 1 8.8.8.8 &> /dev/null
-then
-  return 0
-else
-  echo "WARNING: You are not connected to the internet, Please connect to the Internet"
-fi
-
 # Menambahkan direktori khusus
 mkdir -p /data/local/tmp/sysui
 
